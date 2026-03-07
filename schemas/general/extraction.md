@@ -1,12 +1,12 @@
-# General Schema — Extraction
+Use this schema to extract information about any company that does not fit into a more specific category
 
-## Purpose
+# Purpose
 Define what information the data ingestion and integration layer should extract
 for entities associated with the **general** schema.  This schema applies to
 companies, people, and projects that do not require a more specialised schema
 (e.g. `commercial_real_estate`).
 
-## Fields to Extract
+# Fields to Extract
 
 | Field | Type | Source | Notes |
 |-------|------|--------|-------|
@@ -14,10 +14,9 @@ companies, people, and projects that do not require a more specialised schema
 | `firm_type` | string \| list | front matter | Normalised to ontology values |
 | `focus` | string \| list | front matter | Normalised to ontology values |
 | `website` | string | front matter | Optional |
-| `headquarters` | string | front matter | City, State / Country |
+| `city` | string | front matter | Optional |
 | `description` | string | front matter or body | Brief narrative |
-| `founded` | string | front matter | Year or date |
-| `employees` | string | front matter | Approximate headcount |
+| `state` | string | front matter | Optional |
 | `linkedin` | string | front matter | Profile or company page URL |
 
 ## Extraction Rules

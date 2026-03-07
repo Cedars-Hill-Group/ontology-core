@@ -1,31 +1,34 @@
 ---
-name: ""
+last_contacted: ""
 firm_type: []
 focus: []
 website: ""
-headquarters: ""
-description: ""
-founded: ""
-employees: ""
+date: ""
+city: ""
+state: ""
+country: ""
 linkedin: ""
+status: ""
+source: ""
+industry: ""
+sector: ""
+schema: ""
 ---
 
-# {name}
+#companies
 
-Brief narrative description of the entity, its history, and its relevance to
-Cedars Hill Group.
+# Overview
 
-## Overview
+# Descriptions
 
-> Add a concise overview paragraph here.
+# Products & Services
 
-## Key Facts
+# Target Market
 
-- **Founded:** {founded}
-- **Headquarters:** {headquarters}
-- **Employees:** {employees}
-- **Website:** [{website}]({website})
+# Key Differentiators
 
-## Notes
+# Recent Highlights
 
-> Add any additional context, relationship notes, or deal history here.
+# Notes
+
+# Relations

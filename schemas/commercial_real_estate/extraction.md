@@ -1,31 +1,25 @@
-# Commercial Real Estate Schema — Extraction
+Use this schema to extract information about companies operating in the commercial real estate industry, including lenders, brokers, investors, developers, and advisors.
 
-## Purpose
+# Purpose
 Define what information the data ingestion and integration layer should extract
 for entities associated with the **commercial_real_estate** schema.  This schema
 extends the general schema with CRE-specific fields.
 
 ## Fields to Extract
 
-### General Fields (inherited)
+# General Fields (inherited)
 See `schemas/general/extraction.md` for the base set of fields that apply to
 all entities regardless of schema.
 
-### CRE-Specific Fields
+# CRE-Specific Fields
 
 | Field | Type | Source | Notes |
 |-------|------|--------|-------|
-| `property_types` | list | front matter | e.g. `office`, `retail`, `industrial`, `multifamily` |
-| `asset_class` | string | front matter | e.g. `core`, `core_plus`, `value_add`, `opportunistic` |
-| `geography` | string \| list | front matter | Target markets or regions |
-| `aum` | string | front matter | Assets under management (formatted string or number) |
-| `total_sf` | string | front matter | Total square footage owned / managed |
-| `deal_size_range` | string | front matter | Typical transaction size range |
-| `equity_check` | string | front matter | Typical equity cheque size |
-| `debt_types` | list | front matter | e.g. `senior`, `mezzanine`, `preferred_equity` |
-| `hold_period` | string | front matter | Target hold period (e.g. `3-5 years`) |
-| `leverage_target` | string | front matter | Target LTV or LTC range |
-| `preferred_markets` | list | front matter | List of preferred MSAs or regions |
+| `prop_type` | string \| list | front matter | Normalized to ontology values |
+| `loan_type` | string \| list | front matter | Normalized to ontology values |
+| `loan_structure` | string \| list | front matter | Normalized to ontology values |
+| `loan_purpose` | string \| list | front matter | Normalized to ontology values |
+| `project_type` | string \| list | front matter | Normalized to ontology values |
 
 ## Extraction Rules
 
