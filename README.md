@@ -1,8 +1,8 @@
-# ontology-core
+*# ontology-core
 
-Central definition of Cedars Hill Group's ontology and shared utilities within the CHG Operating System.
+Central definition of the canonical object model for the CHG Operating System.
 
-`ontology-core` is a Python library that defines the entity model (companies, people, projects), normalises categorical property values (`firm_type`, `focus`), and provides a CLI tool that walks a Markdown-based knowledge base and emits a machine-readable `properties.json` catalog consumed by downstream data pipelines and LLM workflows.
+`ontology-core` is a Python library that defines the entity model (companies, people, projects).
 
 ---
 

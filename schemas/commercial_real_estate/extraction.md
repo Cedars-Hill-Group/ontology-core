@@ -1,34 +1,31 @@
-Use this schema to extract information about companies operating in the commercial real estate industry, including lenders, brokers, investors, developers, and advisors.
+Use this schema to extract information about companies operating in the commercial real estate sector, including lenders, brokers, investors, developers, and advisors.
 
-# Purpose
-Define what information the data ingestion and integration layer should extract
-for entities associated with the **commercial_real_estate** schema.  This schema
-extends the general schema with CRE-specific fields.
+## Company Overview
+- **Company Name**: [Full legal name]
+- **Website**: [Official website URL]
+- **CRE Sector**: [e.g., Lending, Brokerage, Investment/Equity, Development, Advisory, Property Management]
+- **Firm Type**: [investor, lender, broker, advisor, REIT, manager, developer]
+- **Founded**: [Year founded, if available]
+- **Headquarters**: [City, State/Country]
+- **Geographic Focus**: [Markets or regions served]
 
-## Fields to Extract
+## Description
+[2-3 paragraph description of the company, its history, and its position in the CRE market]
 
-# General Fields (inherited)
-See `schemas/general/extraction.md` for the base set of fields that apply to
-all entities regardless of schema.
+## Products & Services
+[Bulleted list of CRE products and services]
 
-# CRE-Specific Fields
+## Loan Programs / Investment Strategies
+[If applicable, describe loan programs (loan types, sizes, LTV, rates) or investment strategies]
 
-| Field | Type | Source | Notes |
-|-------|------|--------|-------|
-| `prop_type` | string \| list | front matter | Normalized to ontology values |
-| `loan_type` | string \| list | front matter | Normalized to ontology values |
-| `loan_structure` | string \| list | front matter | Normalized to ontology values |
-| `loan_purpose` | string \| list | front matter | Normalized to ontology values |
-| `project_type` | string \| list | front matter | Normalized to ontology values |
+## Property Types
+[Types of commercial properties the company focuses on, e.g., Multifamily, Office, Retail, Industrial, Hospitality, Mixed-Use]
 
-## Extraction Rules
+## Loan / Deal Size
+[Typical transaction or loan size range, if available]
 
-1. All general extraction rules apply (see `schemas/general/extraction.md`).
-2. `property_types` must be normalised to the canonical ontology values.
-3. `aum` and financial figures are stored as strings to preserve the original
-   notation; the data layer is responsible for parsing into numeric types.
-4. Geographic fields accept free-form text, MSA names, state codes, or country
-   names; normalisation to ISO codes happens in the integration layer.
-5. Any `firm_type` value of `real_estate_developer`, `reit`, or
-   `real_estate_investment_trust` triggers automatic selection of this schema
-   when no explicit schema is set.
+## Key Contacts / Team
+[Notable leadership or contact information, if available]
+
+## Recent Transactions / Highlights
+[Notable recent deals, closings, or achievements, if available]
