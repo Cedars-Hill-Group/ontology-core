@@ -1,0 +1,1354 @@
+{
+  "firm_type": [
+    {
+      "value": "actuary",
+      "description": "An actuarial services company."
+    },
+    {
+      "value": "administrator",
+      "description": "A company that provides adminstrative services."
+    },
+    {
+      "value": "advisor",
+      "description": "A company that provides advisory services. It is distinct from a brokerage company and an investment company."
+    },
+    {
+      "value": "agtech",
+      "description": "A company focused on agricultural technology."
+    },
+    {
+      "value": "ai",
+      "description": "A company focused on artificial intelligence."
+    },
+    {
+      "value": "analytics",
+      "description": "A company focused on analytics."
+    },
+    {
+      "value": "appraisal",
+      "description": "A company focused on appraisal and valuation services."
+    },
+    {
+      "value": "asset_manager",
+      "description": "A company that manages investment portfolios on behalf of institutional or retail clients across a range of asset classes."
+    },
+    {
+      "value": "ats",
+      "description": "An Alternative Trading System (ATS) is a non-exchange, SEC-regulated venue that electronically matches buy and sell orders for securities, often providing anonymity, lower costs, and dark pool liquidity for large institutional trades. ATSs operate under broker-dealer regulations, not as national securities exchanges. "
+    },
+    {
+      "value": "bank",
+      "description": "A regulated banking institution that holds customer deposits and provides financial services."
+    },
+    {
+      "value": "bdc",
+      "description": "A Business Development Company (BDC) is a type of closed-end fund that invests in small and mid-sized businesses, providing them with capital and managerial assistance."
+    },
+    {
+      "value": "boutique_investment_bank",
+      "description": "A small investment bank that specializes in specific industries or types of transactions."
+    },
+    {
+      "value": "broker",
+      "description": "A company that acts as an intermediary between buyers and sellers, facilitating transactions."
+    },
+    {
+      "value": "broker_dealer",
+      "description": "A company that acts as both a broker and a dealer in securities transactions."
+    },
+    {
+      "value": "cdfi",
+      "description": "A Community Development Financial Institution (CDFI) is a specialized financial institution that works in underserved markets to provide financial services and promote economic development."
+    },
+    {
+      "value": "coi",
+      "description": "A Center of Influence is a company that has significant influence within a particular industry or community."
+    },
+    {
+      "value": "commodity_trading",
+      "description": "A company focused on commodity trading."
+    },
+    {
+      "value": "compliance",
+      "description": "A company that provides compliance services."
+    },
+    {
+      "value": "construction",
+      "description": "A company that provides construction services."
+    },
+    {
+      "value": "consultant",
+      "description": "A company that provides consulting services."
+    },
+    {
+      "value": "credit_union",
+      "description": "A company that operates as a credit union, providing financial services to its members."
+    },
+    {
+      "value": "data",
+      "description": "A company that focuses on data-related services or products."
+    },
+    {
+      "value": "data_analytics",
+      "description": "A company that provides data analytics services."
+    },
+    {
+      "value": "design",
+      "description": "A company that provides design services."
+    },
+    {
+      "value": "developer",
+      "description": "A company that provides development services."
+    },
+    {
+      "value": "direct_lender",
+      "description": "A non-bank company that provides loans directly to borrowers."
+    },
+    {
+      "value": "due_diligence",
+      "description": "A company that provides due diligence services."
+    },
+    {
+      "value": "endowment",
+      "description": "A portfolio of investments, typically held by a university, foundation, or nonprofit, managed to fund ongoing operations in perpetuity."
+    },
+    {
+      "value": "energy_as_a_service",
+      "description": "A company that provides energy as a service."
+    },
+    {
+      "value": "engineering",
+      "description": "A company that provides engineering services."
+    },
+    {
+      "value": "etf",
+      "description": "An Exchange Traded Fund (ETF) is a type of investment fund and exchange-traded product, meaning they are traded on stock exchanges."
+    },
+    {
+      "value": "family_office",
+      "description": "A private wealth management entity that manages the investments and financial affairs of a single ultra-high-net-worth family. It is distinct from an RIA in that it serves only one family or a small group of related families."
+    },
+    {
+      "value": "financial_analysis",
+      "description": "A company that provides financial analysis services."
+    },
+    {
+      "value": "fintech",
+      "description": "A company that provides the financial services industry with technology solutions."
+    },
+    {
+      "value": "franchisee",
+      "description": "A company that operates as a franchisee."
+    },
+    {
+      "value": "fund_administrator",
+      "description": "A company that provides fund administration services."
+    },
+    {
+      "value": "general_contractor",
+      "description": "A company that provides general contracting services."
+    },
+    {
+      "value": "government_agency",
+      "description": "A company that is an agency of the government."
+    },
+    {
+      "value": "graphic_design",
+      "description": "A company that provides graphic design services."
+    },
+    {
+      "value": "gse",
+      "description": "A company that is a government-sponsored enterprise (GSE)."
+    },
+    {
+      "value": "healthcare",
+      "description": "A company that provides healthcare services."
+    },
+    {
+      "value": "healthtech",
+      "description": "A company that provides technology solutions for the healthcare industry."
+    },
+    {
+      "value": "hedge_fund",
+      "description": "An actively managed investment fund that employs a wide range of strategies to generate alpha, including long/short, macro, and arbitrage."
+    },
+    {
+      "value": "holding_company",
+      "description": "A company that is organized to hold the outstanding stock of other companies."
+    },
+    {
+      "value": "home_improvement",
+      "description": "A company that provides home improvement services."
+    },
+    {
+      "value": "homebuilder",
+      "description": "A company that primarily builds single-family residential homes."
+    },
+    {
+      "value": "independent_studio",
+      "description": "An independent film or media production company."
+    },
+    {
+      "value": "insurance",
+      "description": "A company that insures risks for its clients and charges premiums in return."
+    },
+    {
+      "value": "investment",
+      "description": "A company that is primarily focused on making investments. It is distinct from an asset manager in that it does not offer a broad suite of investment products for its investors. It is distinct from a lender in that it makes equity investments rather than debt investments."
+    },
+    {
+      "value": "investment_bank",
+      "description": "A financial institution that advises on and facilitates capital markets transactions, mergers and acquisitions, and other corporate finance activity."
+    },
+    {
+      "value": "law",
+      "description": "A company that provides legal services."
+    },
+    {
+      "value": "lender",
+      "description": "A non-bank company that provides loans to its clients. "
+    },
+    {
+      "value": "manufacturer",
+      "description": "A company that manufactures products."
+    },
+    {
+      "value": "marketing",
+      "description": "A company that provides marketing services."
+    },
+    {
+      "value": "marketplace",
+      "description": "A company that operates a marketplace platform."
+    },
+    {
+      "value": "merchant_bank",
+      "description": "A company that provides merchant banking services. A merchant bank is distinct from an investment bank in that it primarily makes investments using its own capital rather than facilitating transactions on behalf of clients."
+    },
+    {
+      "value": "mfo",
+      "description": "A company that is a multi-family office (MFO)."
+    },
+    {
+      "value": "mortgage",
+      "description": "A company that provides residential mortgages and mortgage-related services."
+    },
+    {
+      "value": "mortgage_banking",
+      "description": "A company that originates and funds residential mortgages."
+    },
+    {
+      "value": "news",
+      "description": "A company that publishes news and other journalistic content."
+    },
+    {
+      "value": "non_profit",
+      "description": "A company that operates as a non-profit organization."
+    },
+    {
+      "value": "nrsro",
+      "description": "A company that is a nationally recognized statistical rating organization (NRSRO)."
+    },
+    {
+      "value": "ocfo",
+      "description": "A company that is an outsourced chief financial officer (OCFO) service provider."   
+    },
+    {
+      "value": "ocio",
+      "description": "A company that is an outsourced chief investment office (OCIO) service provider."
+    },
+    {
+      "value": "oem",
+      "description": "A company that is an original equipment manufacturer (OEM)."
+    },
+    {
+      "value": "opportunistic",
+      "description": "A company that pursues opportunistic investment strategies."
+    },
+    {
+      "value": "originator",
+      "description": "A company that originates loans."
+    },
+    {
+      "value": "pace_admin",
+      "description": "A company that administers Property Assessed Clean Energy (PACE) program(s)."
+    },
+    {
+      "value": "pe_insurance",
+      "description": "An insurance company that is owned or controlled by a private equity firm or other investment firm."
+    },
+    {
+      "value": "pension",
+      "description": "A company that manages pension plan assets."
+    },
+    {
+      "value": "placement_agent",
+      "description": "A company that acts as a placement agent, helping to raise capital for investment funds."
+    },
+    {
+      "value": "private_bank",
+      "description": "A company that provides private banking services."
+    },
+    {
+      "value": "private_credit",
+      "description": "A non-bank lender to private companies."
+    },
+    {
+      "value": "private_equity",
+      "description": "A private equity firm that invests in private companies through buyouts, growth equity, or venture capital strategies."
+    },
+    {
+      "value": "professional_society",
+      "description": "An organization of professionals in a specific field or industry."
+    },
+    {
+      "value": "property_consulting",
+      "description": "A company that provides property consulting services."
+    },
+    {
+      "value": "property_management",
+      "description": "A company that provides property management services."
+    },
+    {
+      "value": "proptech",
+      "description": "A company that provides technology solutions for real estate and other properties."
+    },
+    {
+      "value": "rating_agency",
+      "description": "A company that provides credit rating services."
+    },
+    {
+      "value": "rec",
+      "description": "A company that works with renewable energy certificates (RECs) or provides related services."
+    },
+    {
+      "value": "recruiter",
+      "description": "A company that provides employment recruitment services."
+    },
+    {
+      "value": "reinsurance",
+      "description": "A company that provides insurance and reinsurance solutions to other insurance companies."
+    },
+    {
+      "value": "reit",
+      "description": "A real estate investment trust (REIT) that owns, operates, or finances income-producing real estate and is required to distribute the majority of its taxable income."
+    },
+    {
+      "value": "research",
+      "description": "A company that provides research services."
+    },
+    {
+      "value": "residential_services",
+      "description": "A company that provides services for residential real estate properties."
+    },
+    {
+      "value": "retailer",
+      "description": "A company that operates retail businesses."
+    },
+    {
+      "value": "ria",
+      "description": "An SEC registered Registered Investment Advisor (RIA) is a firm that provides investment advice and financial planning services to clients and is registered with the U.S. Securities and Exchange Commission (SEC) or state securities authorities. An RIA is distinct from a family office in that it is independent from any single family investor or small group of large family investors."
+    },
+    {
+      "value": "saas",
+      "description": "A company that provides Software as a Service (SaaS) solutions."
+    },
+    {
+      "value": "security",
+      "description": "A company that provides security and protection services or products."
+    },
+    {
+      "value": "servicer",
+      "description": "A company that provides loan servicing solutions."
+    },
+    {
+      "value": "social_network",
+      "description": "A company that operates a social networking platform."
+    },
+    {
+      "value": "software",
+      "description": "A company that develops or provides software products or services."
+    },
+    {
+      "value": "sponsor",
+      "description": "A company that sponsors projects (eg. real estate, infrastructure, etc.) by providing financial and/or strategic support."
+    },
+    {
+      "value": "surveying",
+      "description": "A company that provides surveying services."
+    },
+    {
+      "value": "swf",
+      "description": "A Sovereign Wealth Fund (SWF) that manages state-owned investment funds."
+    },
+    {
+      "value": "syndicator",
+      "description": "A company that organizes and manages syndications, pooling capital from multiple investors to invest in projects or assets."
+    },
+    {
+      "value": "trade_association",
+      "description": "A company that represents the interests of a specific industry or trade."
+    },
+    {
+      "value": "trust_deeds",
+      "description": "A company that acts as third-party trustee for trust deeds."
+    },
+    {
+      "value": "university",
+      "description": "A company that operates a university or higher education institution."
+    },
+    {
+      "value": "valuation",
+      "description": "A company that provides valuation services."
+    },
+    {
+      "value": "vc",
+      "description": "A Venture Capital (VC) fund is a company that invests in early-stage companies and startups."
+    }
+  ],
+  "focus": [
+    {
+      "value": "abs",
+      "description": "Asset-Backed Securities (ABS) are securities backed by a pool of assets such as loans, leases, credit card debt, or receivables."
+    },
+    {
+      "value": "accounting",
+      "description": "Accounting is the systematic recording, reporting, and analysis of financial transactions of a business."
+    },
+    {
+      "value": "admin_services",
+      "description": "Administrative services are support services that help organizations manage their operations efficiently."
+    },
+    {
+      "value": "advisory",
+      "description": "Advisory work involves providing expert advice and guidance to organizations or individuals."
+    },
+    {
+      "value": "aerospace_defense",
+      "description": "Aerospace and defense industry is comprised of companies that design, manufacture, and support aircraft, spacecraft, and defense systems."
+    },
+    {
+      "value": "agriculture",
+      "description": "Agriculture is the practice of cultivating plants and livestock. The agriculture industry includes farming, forestry, fishing, and related activities."
+    },
+    {
+      "value": "agtech",
+      "description": "Agricultural technology (AgTech) involves the use of technology to improve the efficiency and productivity of agricultural practices."
+    },
+    {
+      "value": "alternatives",
+      "description": "Alternative investments are financial assets that do not fall into the conventional categories of stocks, bonds, or cash."
+    },
+    {
+      "value": "analytics",
+      "description": "Analytics involves the systematic computational analysis of data or statistics to discover patterns, trends, and insights."
+    },
+    {
+      "value": "appraisal",
+      "description": "Appraisals involve the evaluation and estimation of the value of assets or properties."
+    },
+    {
+      "value": "architecture",
+      "description": "Architecture involves the planning, designing, and constructing of buildings and other physical structures."
+    },
+    {
+      "value": "artificial_intelligence",
+      "description": "Artificial intelligence (AI) involves the simulation of human intelligence processes by machines, especially computer systems."
+    },
+    {
+      "value": "asset_management",
+      "description": "Asset management involves the systematic process of researching, selecting, and overseeing investments on behalf of clients as well as raising capital from investors by selling investment products."
+    },
+    {
+      "value": "asset_management_services",
+      "description": "Asset management services involve the provision of professional services for real estate and other physical assets."
+    },
+    {
+      "value": "ats",
+      "description": "An Alternative Trading System (ATS) is a non-exchange, SEC-regulated venue that electronically matches buy and sell orders for securities, often providing anonymity, lower costs, and dark pool liquidity for large institutional trades. ATSs operate under broker-dealer regulations, not as national securities exchanges. "
+    },
+    {
+      "value": "audit",
+      "description": "Audit involves the systematic examination and evaluation of an organization's financial statements, records, and operations to ensure accuracy, compliance, and integrity."
+    },
+    {
+      "value": "automation",
+      "description": "Automation involves the use of technology to perform tasks with minimal human intervention, improving efficiency and reducing errors."
+    },
+    {
+      "value": "automotive",
+      "description": "Automotive involves the design, development, manufacturing, marketing, selling, repair, and maintenance of motor vehicles."
+    },
+    {
+      "value": "aviation",
+      "description": "Aviation involves the acquisition, disposition, financing, design, development, production, operation, and use of aircraft."
+    },
+    {
+      "value": "background_checks",
+      "description": "Background checks involve the process of verifying information about individuals or organizations to assess their suitability for a particular role or purpose."
+    },
+    {
+      "value": "banks",
+      "description": "Banks are financial institutions licensed to receive deposits and make loans, as well as provide other financial services."
+    },
+    {
+      "value": "biomass",
+      "description": "Biomass involves organic material used as a renewable energy source, including plant and animal materials."
+    },
+    {
+      "value": "bitcoin",
+      "description": "Bitcoin is a decentralized digital currency that operates without a central bank or single administrator."
+    },
+    {
+      "value": "blockchain",
+      "description": "Blockchain involves a distributed ledger technology that ensures secure, transparent, and tamper-proof recording of transactions across multiple computers."
+    },
+    {
+      "value": "btr",
+      "description": "Build to Rent (BTR) refers to residential properties that are specifically designed and constructed for the rental market, rather than for sale."
+    },
+    {
+      "value": "business_consulting_services",
+      "description": "Business consulting services involve providing expert advice and solutions to help organizations improve their performance and achieve their goals."
+    },
+    {
+      "value": "business_development",
+      "description": "Business development involves activities and strategies aimed at growing a business, including market expansion, partnerships, and sales growth."
+    },
+    {
+      "value": "business_law",
+      "description": "Business law encompasses the legal aspects related to the formation, operation, and dissolution of businesses."
+    },
+    {
+      "value": "business_services",
+      "description": "Business services involve the provision of support and specialized services to businesses to help them operate effectively."
+    },
+    {
+      "value": "cannabis",
+      "description": "Cannabis involves the cultivation, distribution, and sale of cannabis products for medical or recreational use."
+    },
+    {
+      "value": "capital_markets",
+      "description": "Capital markets involve financial markets where long-term debt or equity-backed securities are bought and sold."
+    },
+    {
+      "value": "car_wash",
+      "description": "Car wash involves the cleaning and maintenance of vehicles."
+    },
+    {
+      "value": "carbon_markets",
+      "description": "An investment or operational focus area categorised as 'carbon_markets'."
+    },
+    {
+      "value": "cash_management",
+      "description": "Cash management involves the collection, handling, and usage of cash in a business or financial institution."
+    },
+    {
+      "value": "cfo",
+      "description": "Chief Financial Officer (CFO) is a senior executive responsible for managing the financial actions of a company."
+    },
+    {
+      "value": "chp",
+      "description": "Combined Heat and Power (CHP) is a system that simultaneously generates electricity and useful thermal energy from a single fuel source."
+    },
+    {
+      "value": "christian",
+      "description": "A believer in Jesus Christ."
+    },
+    {
+      "value": "christianity",
+      "description": "Christianity is a monotheistic religion based on the life and teachings of Jesus Christ."
+    },
+    {
+      "value": "churches",
+      "description": "Religious institutions where Christian worship and community activities take place."
+    },
+    {
+      "value": "ci_lending",
+      "description": "Traditional commercial and industrial lending."
+    },
+    {
+      "value": "classification",
+      "description": "The science of classifying things into different categories."
+    },
+    {
+      "value": "clo",
+      "description": "A collateralized loan obligation (CLO) is a type of structured credit product that pools together cash-flow generating assets and repackages this asset pool into tranches that can be sold to investors."
+    },
+    {
+      "value": "cloud_infrastructure",
+      "description": "Cloud infrastructure involves the hardware and software components that support cloud computing services."
+    },
+    {
+      "value": "cmbs",
+      "description": "Commercial Mortgage-Backed Security (CMBS) is a type of structured product that pools together commercial mortgage loans"
+    },
+    {
+      "value": "co_gp",
+      "description": "An investment strategy the focuses on investing in the General Partner of different investment projects instead of the Limited Partnership to gain better economics and control of the projects."
+    },
+    {
+      "value": "coaching",
+      "description": "Professional coaching services."
+    },
+    {
+      "value": "code_gen",
+      "description": "Code generation is a subset of the many use cases of artificial intelligence."
+    },
+    {
+      "value": "commercial_real_estate",
+      "description": "Investment, development, or operation of income-producing properties such as office, retail, industrial, and multifamily assets. Commonly abbreviated as CRE."
+    },
+    {
+      "value": "communications",
+      "description": "Communication technology or services."
+    },
+    {
+      "value": "community_banks",
+      "description": "A community bank is a bank that serves a local community."
+    },
+    {
+      "value": "community_development",
+      "description": "Community development projects seek to revitalize or improve a certain community."
+    },
+    {
+      "value": "compliance",
+      "description": "Compliance operations focus on complying with applicable laws and regulations."
+    },
+    {
+      "value": "construction",
+      "description": "Construction is the process of constructing a structure, building, or other physical asset."
+    },
+    {
+      "value": "consulting",
+      "description": "Consulting services provide expert advice and solutions to organizations in various industries."
+    },
+    {
+      "value": "consumer",
+      "description": "Consumer goods, retail, and services businesses that sell directly or indirectly to end consumers."
+    },
+    {
+      "value": "consumer_credit",
+      "description": "Consumer credit involves lending to individuals for personal, family, or household purposes such as auto loans, credit cards, and personal loans."
+    },
+    {
+      "value": "coo",
+      "description": "Chief Operating Officer (COO) is a senior executive responsible for overseeing the day-to-day administrative and operational functions of a company."
+    },
+    {
+      "value": "corp",
+      "description": "Corporate bonds are debt securities issued by corporations to raise capital for various purposes."
+    },
+    {
+      "value": "cpa",
+      "description": "A Certified Public Accountant (CPA) is a professional designation given to accountants who have passed the Uniform CPA Examination and met additional state certification and experience requirements."
+    },
+    {
+      "value": "credit",
+      "description": "Fixed-income, private credit, distressed debt, and other lending or credit-oriented investment strategies."
+    },
+    {
+      "value": "crowdfunding",
+      "description": "Crowdfunding is a method of raising capital through the collective effort of a large number of individuals, typically via online platforms."
+    },
+    {
+      "value": "cryptocurrency",
+      "description": "Cryptocurrency is a digital or virtual currency that uses cryptography for security and operates independently of a central authority."
+    },
+    {
+      "value": "cso",
+      "description": "Collateralized synthetic obligations (CSOs) are structured financial products that use derivatives to create exposure to a pool of underlying assets without directly owning them."
+    },
+    {
+      "value": "ctl",
+      "description": "Credit tenant leases (CTLs) are specialized commercial real estate loans that are secured by properties leased to high-credit-quality tenants, often with long-term leases."
+    },
+    {
+      "value": "cybersecurity",
+      "description": "Cybersecurity involves protecting computer systems, networks, and data from digital attacks, unauthorized access, and damage."
+    },
+    {
+      "value": "data",
+      "description": "Data is a broad category that encompasses various aspects of data management, analysis, and technology."
+    },
+    {
+      "value": "data_centers",
+      "description": "Data centers are facilities used to house computer systems and associated components, such as telecommunications and storage systems."
+    },
+    {
+      "value": "debt_consolidation",
+      "description": "Debt consolidation involves combining multiple debts into a single loan or payment plan, often to secure a lower interest rate or simplify payments."
+    },
+    {
+      "value": "debt_resolution",
+      "description": "Debt resolution involves strategies and services aimed at helping individuals or businesses resolve and manage their debt obligations."
+    },
+    {
+      "value": "debt_syndication",
+      "description": "Debt syndication is the process of involving multiple lenders to provide portions of a loan to a single borrower, spreading the risk among the lenders."
+    },
+    {
+      "value": "derivatives",
+      "description": "Derivatives are financial contracts whose value is derived from the performance of underlying assets, indices, or interest rates."
+    },
+    {
+      "value": "dermatology",
+      "description": "Dermatology is the branch of medicine that focuses on the diagnosis and treatment of skin, hair, and nail disorders."
+    },
+    {
+      "value": "devops",
+      "description": "DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the development lifecycle and deliver high-quality software continuously."
+    },
+    {
+      "value": "digital_infrastructure",
+      "description": "Digital infrastructure refers to the foundational services and facilities that support digital operations, including data centers, networks, and cloud services."
+    },
+    {
+      "value": "distressed",
+      "description": "Distressed investing involves purchasing securities or assets that are in financial distress or facing bankruptcy, often at a significant discount."
+    },
+    {
+      "value": "distribution",
+      "description": "Distribution involves the process of delivering products or services to end consumers or intermediaries. It also refers to raising capital through the distribution of financial products."
+    },
+    {
+      "value": "due_diligence",
+      "description": "Due diligence involves the investigation and evaluation of a business or individual before entering into a transaction or agreement."
+    },
+    {
+      "value": "early_stage",
+      "description": "Early stage refers to the initial phases of a company's development, typically involving seed funding and Series A financing rounds."
+    },
+    {
+      "value": "education",
+      "description": "Education encompasses the systems, institutions, and processes involved in teaching and learning."
+    },
+    {
+      "value": "emerging_markets",
+      "description": "Emerging markets are nations with social or business activities in the process of rapid growth and industrialization."
+    },
+    {
+      "value": "energy",
+      "description": "Oil and gas, renewable energy, utilities, and other energy-sector businesses and infrastructure."
+    },
+    {
+      "value": "engineering",
+      "description": "Engineering involves the application of scientific principles to design, build, and maintain structures, machines, and systems."
+    },
+    {
+      "value": "entertainment",
+      "description": "Entertainment involves the production and distribution of content for leisure and enjoyment, including film, television, music, and gaming."
+    },
+    {
+      "value": "esg",
+      "description": "environmental, social, and governance (ESG) criteria are a set of standards for a company’s operations that socially conscious investors use to screen potential investments."
+    },
+    {
+      "value": "estate_planning",
+      "description": "Estate planning involves the preparation of tasks that serve to manage an individual's asset base in the event of their incapacitation or death."
+    },
+    {
+      "value": "etf",
+      "description": "An exchange-traded fund (ETF) is a type of investment fund and exchange-traded product, meaning they are traded on stock exchanges."
+    },
+    {
+      "value": "european_cre",
+      "description": "European commercial real estate (CRE) involves investment and management of commercial properties across Europe."
+    },
+    {
+      "value": "faith",
+      "description": "Faith involves the belief in the unknown, or something beyond empirical evidence. It refers to spirituality or religion. Faith-based investing involves aligning investment strategies with religious or spiritual values."
+    },
+    {
+      "value": "family_office",
+      "description": "A family office is a private wealth management advisory firm that serves ultra-high-net-worth individuals or families. A single-family office (SFO) serves one family, while a multi-family office (MFO) serves multiple families and overlaps with the RIA or wealth management business model."
+    },
+    {
+      "value": "fha",
+      "description": "The Federal Housing Authority (FHA) is a United States government agency that provides mortgage insurance on loans made by FHA-approved lenders."
+    },
+    {
+      "value": "film_finance",
+      "description": "Film finance involves the funding and investment in the production and distribution of films and other media content."
+    },
+    {
+      "value": "financial_advisor",
+      "description": "A financial advisor is a professional who provides financial services and advice to clients based on their financial situation and goals."
+    },
+    {
+      "value": "financial_planning",
+      "description": "Financial planning involves the process of creating a comprehensive strategy to manage an individual's or organization's financial resources to achieve specific goals."
+    },
+    {
+      "value": "financial_services",
+      "description": "Banks, insurance companies, asset managers, and other firms that provide financial products and services."
+    },
+    {
+      "value": "financial_strategy",
+      "description": "Financial strategy involves the planning and management of financial resources to achieve organizational goals."
+    },
+    {
+      "value": "fintech",
+      "description": "Financial Technology (FinTech) involves the use of technology to improve and automate financial services and processes."
+    },
+    {
+      "value": "fixed_income",
+      "description": "Fixed-income investments involve securities that provide regular income payments, such as bonds and other debt instruments."
+    },
+    {
+      "value": "forestry",
+      "description": "Forestry involves the management, conservation, and sustainable use of forests and woodland resources."
+    },
+    {
+      "value": "fpa",
+      "description": "Financial Planning and Analysis (FP&A) involves budgeting, forecasting, and analyzing a company's financial performance to support strategic decision-making."
+    },
+    {
+      "value": "fund_accounting",
+      "description": "Fund Accounting involves the specialized accounting practices used by investment funds to track and report their financial activities."
+    },
+    {
+      "value": "fund_administration",
+      "description": "Fund administration involves the management and oversight of investment funds, including accounting, reporting, and compliance."
+    },
+    {
+      "value": "fund_of_funds",
+      "description": "A fund of funds (FoF) is an investment strategy that involves investing in a portfolio of other investment funds rather than directly in individual securities."
+    },
+    {
+      "value": "fund_operations",
+      "description": "Fund operations refers to the day-to-day activities and processes involved in managing and administering investment funds."
+    },
+    {
+      "value": "fund_structuring",
+      "description": "Fund structuring involves the design and organization of investment funds to meet specific investment objectives and regulatory requirements."
+    },
+    {
+      "value": "fundraising",
+      "description": "Fundraising involves the process of seeking and gathering voluntary financial contributions by engaging individuals, businesses, charitable foundations, or governmental agencies."
+    },
+    {
+      "value": "fx",
+      "description": "Foreign Exchange (FX) involves the trading of currencies in the global foreign exchange market."
+    },
+    {
+      "value": "geopolitics",
+      "description": "Geopolitics involves the study of the effects of geography (human and physical) on international politics and relations."
+    },
+    {
+      "value": "gnma_project_loans",
+      "description": "Ginnie Mae project loans are government-backed loans for multifamily housing projects that are insured by the Federal Housing Administration (FHA) or guaranteed by the Department of Veterans Affairs (VA)."
+    },
+    {
+      "value": "graphic_design",
+      "description": "Graphic design involves the creation of visual content to communicate messages and ideas."
+    },
+    {
+      "value": "growth_equity",
+      "description": "Growth equity involves investing in established companies that are looking to expand or restructure their operations, enter new markets, or finance a significant acquisition without a change of control of the business."
+    },
+    {
+      "value": "gyms",
+      "description": "A gym is a facility equipped for physical exercise."
+    },
+    {
+      "value": "healthcare",
+      "description": "Pharmaceutical, biotech, medical devices, and healthcare services companies across the healthcare industry."
+    },
+    {
+      "value": "healthtech",
+      "description": "Technology used to improve healthcare services and delivery."
+    },
+    {
+      "value": "hedge_funds",
+      "description": "Hedge funds are pooled investment funds that employ various strategies to earn active returns for their investors."
+    },
+    {
+      "value": "hedging",
+      "description": "Hedging is the practice of reducing risk exposure by taking an offsetting position in a related asset or security."
+    },
+    {
+      "value": "hospitality",
+      "description": "Hotels, resorts, and short-term accommodation assets across lodging segments and geographies."
+    },
+    {
+      "value": "housing",
+      "description": "Housing refers to residential properties and developments, including single-family homes, multifamily apartments, affordable housing initiatives, and services like homeless shelters."
+    },
+    {
+      "value": "hud",
+      "description": "Housing and Urban Development (HUD) is a U.S. government agency responsible for national policies and programs that address America's housing needs, improve and develop the nation's communities, and enforce fair housing laws."
+    },
+    {
+      "value": "impact",
+      "description": "Impact investing aims to generate positive, measurable social and environmental impact alongside a financial return."
+    },
+    {
+      "value": "independent_director",
+      "description": "An independent board director is a member of a company's board of directors who does not have a material or pecuniary relationship with the company or its related entities, apart from their directorship."
+    },
+    {
+      "value": "independent_sponsors",
+      "description": "Independent sponsors are investment professionals who source, structure, and negotiate private equity transactions without having a committed pool of capital or a traditional fund structure."
+    },
+    {
+      "value": "india",
+      "description": "India is a country in South Asia known for its diverse culture, rich history, and rapidly growing economy."
+    },
+    {
+      "value": "industrials",
+      "description": "Manufacturing, aerospace, defence, engineering services, and other industrial-sector businesses."
+    },
+    {
+      "value": "infrastructure",
+      "description": "Long-lived physical assets including transportation networks, utilities, communications towers, and social infrastructure."
+    },
+    {
+      "value": "insurance",
+      "description": "Insurance is a contract, represented by a policy, in which an individual or entity receives financial protection or reimbursement against losses from an insurance company."
+    },
+    {
+      "value": "investment_banking",
+      "description": "An investment bank provides financial advisory services to corporations, governments, and other entities on mergers and acquisitions, capital raising, and other strategic financial matters."
+    },
+    {
+      "value": "investment_management",
+      "description": "Investment management involves the professional management of various securities and assets to meet specified investment goals for the benefit of investors."
+    },
+    {
+      "value": "investor_relations",
+      "description": "Investor relations involves managing communication between a company and its investors, shareholders, and other stakeholders."
+    },
+    {
+      "value": "jv_equity",
+      "description": "In commercial real estate, joint venture (JV) equity refers to a partnership between two or more parties who pool their resources to invest in a property or portfolio of properties."
+    },
+    {
+      "value": "late_stage",
+      "description": "Late stage refers to the later phases of a company's development, typically involving Series C and beyond financing rounds."
+    },
+    {
+      "value": "leasing",
+      "description": "Leasing involves the contractual arrangement where one party, the lessor, grants the use of an asset to another party, the lessee, for a specified period in exchange for payment."
+    },
+    {
+      "value": "legal",
+      "description": "Legal involves the area of law and legal services related to investments and operations."
+    },
+    {
+      "value": "life_settlements",
+      "description": "Life settlements involve the sale of an existing life insurance policy to a third party for a lump sum payment that is less than the death benefit but more than the cash surrender value."
+    },
+    {
+      "value": "liquid_markets",
+      "description": "Liquid markets refer to markets where assets can be quickly bought or sold with minimal impact on their price."
+    },
+    {
+      "value": "litigation",
+      "description": "Litigation involves the process of taking legal action or resolving disputes through the court system."
+    },
+    {
+      "value": "litigation_finance",
+      "description": "Litigation finance involves providing funding to plaintiffs or law firms to cover the costs of legal proceedings in exchange for a portion of the settlement or judgment."
+    },
+    {
+      "value": "loan_trading",
+      "description": "Loan trading involves the buying and selling of loans in the secondary market."
+    },
+    {
+      "value": "logistics",
+      "description": "Logistics involves the management of the flow of goods, information, and resources between the point of origin and the point of consumption."
+    },
+    {
+      "value": "lower_middle_market",
+      "description": "The lower middle market refers to companies with annual revenues typically ranging from $5 million to $50 million."
+    },
+    {
+      "value": "lp_equity",
+      "description": "LP equity refers to the investment made by Limited Partners (LPs) in a private equity fund or partnership. These are typically passive investments."
+    },
+    {
+      "value": "ma",
+      "description": "Mergers and Acquisitions (M&A) involve the consolidation of companies or assets through various types of financial transactions."
+    },
+    {
+      "value": "macro",
+      "description": "Macroeconomic analysis involves the study of the overall economy and its various sectors to understand economic trends and inform investment decisions."
+    },
+    {
+      "value": "manager_selection",
+      "description": "Manager selection involves the process of evaluating and choosing investment managers or funds to manage assets on behalf of investors."
+    },
+    {
+      "value": "manufacturing",
+      "description": "Manufacturing involves the production of goods using labor, machinery, and chemical or biological processing."
+    },
+    {
+      "value": "marketing",
+      "description": "Marketing involves activities and strategies to promote and sell products or services, including market research and advertising."
+    },
+    {
+      "value": "mass_affluent",
+      "description": "Mass affluent refers to individuals or households with investable assets typically ranging from $100,000 to $1 million."
+    },
+    {
+      "value": "mbs",
+      "description": "MBS refers to mortgage-backed securities, which are asset-backed securities secured by a collection of mortgages."
+    },
+    {
+      "value": "media",
+      "description": "Media involves the communication channels through which news, entertainment, education, data, or promotional messages are disseminated."
+    },
+    {
+      "value": "metals_and_mining",
+      "description": "Metals and mining involves the extraction and processing of minerals and metals from the earth."
+    },
+    {
+      "value": "mh",
+      "description": "Manufactured Housing (MH) involves prefabricated homes that are built in a factory and then transported to a site for installation."
+    },
+    {
+      "value": "middle_market",
+      "description": "Middle market refers to companies with annual revenues typically ranging from $50 million to $500 million."
+    },
+    {
+      "value": "modular_construction",
+      "description": "Modular construction involves the process of constructing buildings or structures using prefabricated modules that are manufactured off-site and then assembled on-site."
+    },
+    {
+      "value": "mortgage",
+      "description": "Mortgage involves the lending of money secured by real estate property, typically for the purpose of purchasing or refinancing a home."
+    },
+    {
+      "value": "multi_manager",
+      "description": "multi-manager refers to an investment strategy that involves allocating assets across multiple investment managers or funds to diversify risk and enhance returns."
+    },
+    {
+      "value": "natural_resources",
+      "description": "Natural resources involve the extraction and management of raw materials from the earth, such as minerals, forests, water, and land."
+    },
+    {
+      "value": "nav_lending",
+      "description": "Net Asset Value (NAV) lending involves providing loans to investment funds or companies based on the value of their underlying assets."
+    },
+    {
+      "value": "nearshoring",
+      "description": "Nearshoring involves relocating business processes or production closer to the company's home country to reduce costs and improve efficiency."
+    },
+    {
+      "value": "networking",
+      "description": "Networking involves building and maintaining professional relationships to facilitate business opportunities and knowledge sharing."
+    },
+    {
+      "value": "nlp",
+      "description": "Natural Language Processing (NLP) is a branch of artificial intelligence that focuses on the interaction between computers and human language, enabling machines to understand, interpret, and generate human language."
+    },
+    {
+      "value": "npl",
+      "description": "Non-performing loans (NPL) refer to loans in which the borrower is not making interest payments or repaying any principal."
+    },
+    {
+      "value": "nyc",
+      "description": "New York City (NYC) is a major financial and cultural center, often referenced in investment and operational contexts."
+    },
+    {
+      "value": "ocfo",
+      "description": "Outsourced Chief Financial Officer (OCFO) services provide companies with access to high-level financial expertise on a part-time or project basis."
+    },
+    {
+      "value": "oil_gas",
+      "description": "Oil and gas involves the exploration, extraction, refining, and distribution of petroleum and natural gas products."
+    },
+    {
+      "value": "operations",
+      "description": "Operations refers to the day-to-day activities of operating a business or organization."
+    },
+    {
+      "value": "opportunistic",
+      "description": "Opportunistic refers to an investment strategy that seeks to capitalize on short-term market inefficiencies or unique opportunities, often involving higher risk and potential for higher returns."
+    },
+    {
+      "value": "oral_surgery",
+      "description": "Oral surgery involves surgical procedures related to the mouth, teeth, jaws, and face."
+    },
+    {
+      "value": "pace",
+      "description": "Property Assessed Clean Energy (PACE) financing is a mechanism that enables property owners to finance energy efficiency, renewable energy, and water conservation improvements through a voluntary assessment on their property tax bill."
+    },
+    {
+      "value": "payments",
+      "description": "Payments involve the processing and transfer of funds between parties for goods, services, or financial transactions."
+    },
+    {
+      "value": "pharmaceuticals",
+      "description": "Pharmaceuticals involve the development, production, and marketing of drugs and medications for medical use."
+    },
+    {
+      "value": "photography",
+      "description": "Photography involves the art, science, and practice of creating durable images by recording light or other electromagnetic radiation."
+    },
+    {
+      "value": "placement_agent",
+      "description": "A placement agent is a firm or individual that helps investment funds raise capital by connecting them with potential investors."
+    },
+    {
+      "value": "portfolio_management",
+      "description": "Portfolio Management involves the selection, prioritization, and oversight of a collection of investments to achieve specific financial goals."
+    },
+    {
+      "value": "ppli",
+      "description": "Private Placement Life Insurance (PPLI) is a type of life insurance policy that is offered to high-net-worth individuals and institutional investors, allowing them to invest in a variety of assets within the policy while enjoying tax advantages."
+    },
+    {
+      "value": "premium_finance",
+      "description": "Premium finance involves providing loans to individuals or businesses to pay insurance premiums, allowing them to spread out the cost over time."
+    },
+    {
+      "value": "private_banking",
+      "description": "Private banking involves personalized financial and banking services offered to high-net-worth individuals."
+    },
+    {
+      "value": "private_credit",
+      "description": "Private credit involves non-bank lending to private companies or projects, often characterized by direct lending or mezzanine financing."
+    },
+    {
+      "value": "private_equity",
+      "description": "Buyout, growth equity, and venture capital strategies targeting private companies."
+    },
+    {
+      "value": "private_placements",
+      "description": "Private placements involve the sale of securities to a relatively small number of select investors as a way of raising capital."
+    },
+    {
+      "value": "process_improvement",
+      "description": "Process improvement involves the proactive task of identifying, analyzing, and improving existing business processes to optimize performance, meet best practice standards, or simply improve quality and the user experience."
+    },
+    {
+      "value": "project_finance",
+      "description": "Project finance involves the financing of long-term infrastructure and industrial projects based on the projected cash flows of the project rather than the balance sheets of the project sponsors."
+    },
+    {
+      "value": "project_management",
+      "description": "Project management involves the planning, organizing, and managing resources to achieve specific project goals and objectives within a defined timeline."
+    },
+    {
+      "value": "property_and_casualty",
+      "description": "Property and Casualty (P&C) insurance provides coverage for property loss or damage and liability for accidents, injuries, and negligence."
+    },
+    {
+      "value": "proptech",
+      "description": "Property technology (PropTech) involves the use of technology to innovate and improve the real estate industry."
+    },
+    {
+      "value": "public_equities",
+      "description": "Public equities involve investing in shares of publicly traded companies on stock exchanges."
+    },
+    {
+      "value": "quant",
+      "description": "Quantitative analysis (quant) involves the use of mathematical and statistical models to analyze financial markets and securities."
+    },
+    {
+      "value": "real_estate",
+      "description": "Real estate involves the purchase, ownership, management, rental, and/or sale of land and buildings for profit."
+    },
+    {
+      "value": "recruiter",
+      "description": "A recruiter is a professional who specializes in finding and attracting qualified candidates for job openings within organizations."
+    },
+    {
+      "value": "regulatory_capital",
+      "description": "Regulatory capital refers to the minimum amount of capital that financial institutions are required to hold by regulatory authorities to ensure their stability and solvency."
+    },
+    {
+      "value": "regulatory_compliance",
+      "description": "Regulatory compliance involves adhering to laws, regulations, guidelines, and specifications relevant to the business or industry."
+    },
+    {
+      "value": "reinsurance",
+      "description": "Reinsurance refers to the practice of insurance companies transferring portions of their risk portfolios to other parties to reduce the likelihood of paying a large obligation resulting from an insurance claim."
+    },
+    {
+      "value": "reits",
+      "description": "Real Estate Investment Trusts (REITs) are companies that own, operate, or finance income-producing real estate."
+    },
+    {
+      "value": "renewable_energy",
+      "description": "Renewable energy involves energy generated from natural resources that are replenished constantly, such as solar, wind, and hydro power."
+    },
+    {
+      "value": "retail",
+      "description": "Retail involves the sale of goods and services from businesses to consumers, including brick-and-mortar stores and e-commerce platforms."
+    },
+    {
+      "value": "risk",
+      "description": "Risk involves the identification, assessment, and prioritization of potential events or uncertainties that could impact an organization's objectives."
+    },
+    {
+      "value": "risk_management",
+      "description": "Risk management involves the process of identifying, assessing, and controlling threats to an organization's capital and earnings."
+    },
+    {
+      "value": "rmbs",
+      "description": "Residential Mortgage-Backed Securities (RMBS) are a type of asset-backed security that is secured by a collection of residential mortgages."
+    },
+    {
+      "value": "secondaries",
+      "description": "Secondaries refer to the buying and selling of pre-existing investor commitments to private equity and other alternative investment funds."
+    },
+    {
+      "value": "securitization",
+      "description": "Securitization is the financial process of pooling various types of contractual debt such as mortgages, auto loans, or credit card debt obligations and selling their related cash flows to third-party investors as securities."
+    },
+    {
+      "value": "security",
+      "description": "Security involves measures taken to protect an organization's assets, information, and operations from potential threats or unauthorized access."
+    },
+    {
+      "value": "senior_living",
+      "description": "Senior living refers to residential communities or facilities designed to meet the needs of older adults, including independent living, assisted living, and memory care."
+    },
+    {
+      "value": "septic",
+      "description": "Septic systems are underground wastewater treatment structures, commonly used in areas without centralized sewer systems."
+    },
+    {
+      "value": "servicing",
+      "description": "Servicing involves the management and administration of loans or other financial assets on behalf of investors."
+    },
+    {
+      "value": "sfr",
+      "description": "Single-Family Rentals (SFR) refer to residential properties that are rented out to tenants, typically on a long-term basis."
+    },
+    {
+      "value": "shipbuilding",
+      "description": "Shipbuilding involves the construction of ships and other floating vessels, including commercial, military, and recreational boats."
+    },
+    {
+      "value": "shipping",
+      "description": "Shipping involves the transportation of goods and materials by sea, air, or land."
+    },
+    {
+      "value": "small_business",
+      "description": "Small business refers to independently owned and operated companies that are limited in size and revenue depending on the industry."
+    },
+    {
+      "value": "small_caps",
+      "description": "Small-cap stocks refer to shares of companies with a relatively small market capitalization, typically between $300 million and $2 billion."
+    },
+    {
+      "value": "software",
+      "description": "Software involves the development, distribution, and maintenance of computer programs and applications."
+    },
+    {
+      "value": "solar",
+      "description": "Solar involves the generation of electricity using sunlight through photovoltaic cells or other solar technologies."
+    },
+    {
+      "value": "spacs",
+      "description": "Special Purpose Acquisition Companies (SPACs) are companies formed to raise capital through an initial public offering (IPO) for the purpose of acquiring or merging with an existing company."
+    },
+    {
+      "value": "specialty_finance",
+      "description": "Specialty finance refers to financial services provided by non-bank lenders that focus on specific market niches or types of lending."
+    },
+    {
+      "value": "sports",
+      "description": "Sports involves activities related to athletic competitions, events, and organizations."
+    },
+    {
+      "value": "structured_credt",
+      "description": "Structured credit involves complex financial instruments that are created by pooling various types of debt and then slicing them into different tranches with varying risk and return profiles."
+    },
+    {
+      "value": "structured_products",
+      "description": "Structured products are pre-packaged investment strategies based on derivatives, designed to meet specific risk-return objectives for investors."
+    },
+    {
+      "value": "student_loans",
+      "description": "Student loans refer to loans provided to students to help cover the cost of higher education, including tuition, fees, and living expenses."
+    },
+    {
+      "value": "supply_chain",
+      "description": "Supply chain involves the management and coordination of the flow of goods, services, and information from suppliers to end customers."
+    },
+    {
+      "value": "surety",
+      "description": "Surety involves a contractual agreement in which a surety guarantees the performance or obligations of a principal to a beneficiary."
+    },
+    {
+      "value": "sustainability",
+      "description": "Sustainability involves practices and strategies aimed at meeting present needs without compromising the ability of future generations to meet their own needs."
+    },
+    {
+      "value": "tax",
+      "description": "Tax involves the study, analysis, and management of taxes, including tax planning, compliance, and strategy."
+    },
+    {
+      "value": "tax_credits",
+      "description": "Tax credits are incentives provided by the government to encourage specific activities or investments, reducing the amount of tax owed."
+    },
+    {
+      "value": "tech",
+      "description": "Technology involves the development, implementation, and management of technological solutions and innovations."
+    },
+    {
+      "value": "telecom",
+      "description": "Telecommunications involves the transmission of information over distances through electronic means, including phone, internet, and satellite communications."
+    },
+    {
+      "value": "title_insurance",
+      "description": "Title insurance involves the protection of property owners and lenders against potential losses due to defects in the title or ownership of real estate."
+    },
+    {
+      "value": "trading",
+      "description": "Trading involves the buying and selling of financial instruments, such as stocks, bonds, commodities, and derivatives, in financial markets."
+    },
+    {
+      "value": "transaction_lawyer",
+      "description": "Transaction lawyers specialize in legal aspects of business transactions, including mergers, acquisitions, and contracts."
+    },
+    {
+      "value": "transformation",
+      "description": "Transformation involves significant changes in business processes, strategies, or structures to improve performance and adapt to market conditions."
+    },
+    {
+      "value": "transportation",
+      "description": "Transportation involves the movement of goods, services, or people from one location to another, including logistics and infrastructure management."
+    },
+    {
+      "value": "underwriting",
+      "description": "Underwriting involves the process of evaluating and assuming risk in exchange for a fee, commonly used in insurance, loans, and securities."
+    },
+    {
+      "value": "valuation",
+      "description": "Valuation involves the process of determining the current worth of an asset or a company."
+    },
+    {
+      "value": "vdr",
+      "description": "VDR (Virtual Data Room) involves the use of secure online platforms for storing and sharing confidential documents during financial transactions."
+    },
+    {
+      "value": "venture_capital",
+      "description": "Venture capital involves early-stage and growth-stage equity investment in high-potential startups and emerging companies."
+    },
+    {
+      "value": "waste_transition",
+      "description": "Waste transition involves the shift towards more sustainable waste management practices, including recycling, composting, and waste-to-energy technologies."
+    },
+    {
+      "value": "water",
+      "description": "Water involves the management, conservation, and sustainable use of water resources."
+    },
+    {
+      "value": "wealth_management",
+      "description": "Wealth management involves providing financial services and advice to individuals and families to help them manage and grow their wealth."
+    },
+    {
+      "value": "whiskey",
+      "description": "Whiskey is a distilled alcoholic beverage made from fermented grain mash, including barley, corn, rye, and wheat. Whiskey investment involves purchasing and holding whiskey as an alternative asset class for potential appreciation in value over time."
+    },
+    {
+      "value": "workflows",
+      "description": "Workflows involve the sequence of processes through which a piece of work passes from initiation to completion."
+    }
+  ]
+}

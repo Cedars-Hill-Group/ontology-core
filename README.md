@@ -1,8 +1,6 @@
 *# ontology-core
 
-Central definition of the canonical object model for the CHG Operating System.
-
-`ontology-core` is a Python library that defines the entity model (companies, people, projects).
+Central library of the canonical object models for the CHG Operating System.
 
 ---
 
@@ -28,17 +26,20 @@ ontology-core/
 │   ├── __init__.py
 │   ├── cli.py                   # CLI entry point (ontology-collect command)
 │   ├── config.py                # Config loader (config.yaml → Python dict)
-│   ├── entities/                # Entity model
+│   ├── entities/                # Entity object models
 │   │   ├── __init__.py
 │   │   ├── base.py              # OntologyEntity base class
 │   │   ├── company.py           # Company entity
 │   │   ├── person.py            # Person entity
-│   │   ├── project.py           # Project entity
+│   │   ├── project.py           # Property entity
 │   │   └── utils.py             # Shared helpers (e.g. as_list)
-│   └── properties/              # Property value layer
-│       ├── __init__.py
-│       ├── collector.py         # PropertyCollector — walks KB and collects values
-│       └── models.py            # Pydantic models: PropertyValue, PropertyCatalog
+│   ├── properties/              # Property value layer
+│   │    ├── __init__.py
+│   │    ├── collector.py        # PropertyCollector — walks KB and collects values
+│   │    └── models.py           # Pydantic models: PropertyValue, PropertyCatalog
+│   │ 
+│   └── objects/                 # Ontology object models (documents, PDFs, emails, etc.)
+│
 ├── schemas/                     # Markdown front-matter templates
 │   ├── general/                 # Generic entity templates
 │   │   ├── template.md
@@ -68,9 +69,9 @@ Every entity in the knowledge base is a Markdown file whose **YAML front matter*
 
 | Class | `entity_type` | Key front-matter fields |
 |-------|--------------|-------------------------|
-| `Company` | `company` | `name`, `firm_type`, `focus`, `website`, `headquarters`, `description` |
-| `Person` | `person` | `name`, `firm_type`, `focus`, `title`, `company`, `email`, `description` |
-| `Project` | `project` | `name`, `firm_type`, `focus`, `status`, `client`, `description` |
+| `Company` | `company` | `name`, `firm_type`, `focus`, `website`, `city`, `state` |
+| `Person` | `person` | `name`, `focus`, `company`, `emails`, `phones`, `linkedin` |
+| `Property` | `property` | `name`, `address`, `city`, `state`, `zip`, `prop_type` |
 
 All three extend `OntologyEntity`, which provides:
 

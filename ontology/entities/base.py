@@ -1,4 +1,4 @@
-"""Base entity class for all firm ontology objects."""
+"""Base entity class for all ontology objects."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ import frontmatter
 
 
 class OntologyEntity:
-    """Base class for a firm ontology entity backed by a Markdown file.
+    """Base class for an ontology entity.
 
     Each entity is represented as a ``.md`` file whose YAML front matter
     contains structured metadata (properties) and whose body contains free-form

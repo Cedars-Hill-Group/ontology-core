@@ -1,0 +1,380 @@
+{"ActivityCycle": [
+    {
+      "ActivityID": "1.1.1",
+      "Phase": "1 Procures",
+      "Part": "1.1 Sources",
+      "Section": "1.1.1",
+      "FormalDefinition": "Collects and synthesizes all information relevant to purchasing decisions; Identifies and recruits potential suppliers of the resources necessary for Researches production",
+      "Colloquial": "Researches potential purchases",
+      "Examples": "Procurement Consulting, Supply Chain Research",
+      "IO": "C2i, C2ii, C2iii, C3ii, C3iii"
+    },
+    {
+      "ActivityID": "1.1.2",
+      "Phase": "1 Procures",
+      "Part": "1.1 Sources",
+      "Section": "1.1.2",
+      "FormalDefinition": "Negotiates price with suppliers and purchases desired resources Sources",
+      "Colloquial": "Buys resources",
+      "Examples": "Buy-side Broker, Auction Houses, Employee Recruitment",
+      "IO": "C4ii"
+    },
+    {
+      "ActivityID": "1.1.3",
+      "Phase": "1 Procures",
+      "Part": "1.1 Sources",
+      "Section": "1.1.3",
+      "FormalDefinition": "Documents the proof of purchase and/or ownership Invoices",
+      "Colloquial": "Documents the purchase",
+      "Examples": "Title Insurance, Background Checks",
+      "IO": "C2iii, C4ii"
+    },
+    {
+      "ActivityID": "1.2.1",
+      "Phase": "1 Procures",
+      "Part": "1.2 Transports",
+      "Section": "1.2.1",
+      "FormalDefinition": "Plans and initiates the transportation of purchased resources Routes",
+      "Colloquial": "Plans route and coordinates logistics",
+      "Examples": "Air Traffic Control, Logistics",
+      "IO": "C2ii, C2iii, C3ii, C3iii, C4ii, C4iii"
+    },
+    {
+      "ActivityID": "1.2.2",
+      "Phase": "1 Procures",
+      "Part": "1.2 Transports",
+      "Section": "1.2.2",
+      "FormalDefinition": "Sends compensation and retrieves the purchased resources Transports",
+      "Colloquial": "Transports",
+      "Examples": "Airlines, Taxis, Shipping, Trucking",
+      "IO": "n/a"
+    },
+    {
+      "ActivityID": "1.2.3",
+      "Phase": "1 Procures",
+      "Part": "1.2 Transports",
+      "Section": "1.2.3",
+      "FormalDefinition": "Documents the transportation and arrival of acquired resources; if necessary, temporarily stores and reroutes resources",
+      "Colloquial": "Documents the arrival of the resource and reroutes if necessary",
+      "Examples": "Cargo Handling, Terminaling",
+      "IO": "C2iii"
+    },
+    {
+      "ActivityID": "1.3.1",
+      "Phase": "1 Procures",
+      "Part": "1.3 Stores",
+      "Section": "1.3.1",
+      "FormalDefinition": "Receives, unloads, secures, and, when necessary, later re-initiates transfer of the relevant resources",
+      "Colloquial": "Protects resources",
+      "Examples": "Cybersecurity, Bodyguards",
+      "IO": "C2ii, C2iii, C3ii, C3iii, C4ii"
+    },
+    {
+      "ActivityID": "1.3.2",
+      "Phase": "1 Procures",
+      "Part": "1.3 Stores",
+      "Section": "1.3.2",
+      "FormalDefinition": "Stores and Manages Resources Stores",
+      "Colloquial": "Stores/ Warehouses",
+      "Examples": "AP: Storage Facilities, Waste Disposal RP: Library",
+      "IO": "N/A"
+    },
+    {
+      "ActivityID": "1.3.3",
+      "Phase": "1 Procures",
+      "Part": "1.3 Stores",
+      "Section": "1.3.3",
+      "FormalDefinition": "Documents Inventory Catalogs",
+      "Colloquial": "Inventories stored resources",
+      "Examples": "Inventory Management, Secretarial Services",
+      "IO": "C2i, C2ii, C2iii"
+    },
+    {
+      "ActivityID": "2.1.1",
+      "Phase": "2 Produces",
+      "Part": "2.1 Designs",
+      "Section": "2.1.1",
+      "FormalDefinition": "Researches and aggregates specifications for product design Researches",
+      "Colloquial": "Conducts general research",
+      "Examples": "General Research, Land Surveying, Laboratories, Space Programs, Detectives",
+      "IO": "C2i, C2ii, C2iii, C3iii"
+    },
+    {
+      "ActivityID": "2.1.2",
+      "Phase": "2 Produces",
+      "Part": "2.1 Designs",
+      "Section": "2.1.2",
+      "FormalDefinition": "Synthesizes research to create the product design Designs",
+      "Colloquial": "Designs a product",
+      "Examples": "Architecture Firms, Workforce Training, Graphic Design",
+      "IO": "C3iii"
+    },
+    {
+      "ActivityID": "2.1.3",
+      "Phase": "2 Produces",
+      "Part": "2.1 Designs",
+      "Section": "2.1.3",
+      "FormalDefinition": "Validates product designs Tests",
+      "Colloquial": "Validates the product design",
+      "Examples": "Clinical Testing, Engineers",
+      "IO": "C2iii, C3iii, C4ii"
+    },
+    {
+      "ActivityID": "2.2.1",
+      "Phase": "2 Produces",
+      "Part": "2.2 Makes",
+      "Section": "2.2.1",
+      "FormalDefinition": "Plans the production process Plans Production",
+      "Colloquial": "Designs the Process",
+      "Examples": "Process Consulting",
+      "IO": "C2ii, C2iii, C3iii, C4ii"
+    },
+    {
+      "ActivityID": "2.2.2",
+      "Phase": "2 Produces",
+      "Part": "2.2 Makes",
+      "Section": "2.2.2",
+      "FormalDefinition": "Produces the product Makes",
+      "Colloquial": "Makes the product",
+      "Examples": "Manufacturing, Software Developers, Food Producers, Construction",
+      "IO": "n/a"
+    },
+    {
+      "ActivityID": "2.2.3",
+      "Phase": "2 Produces",
+      "Part": "2.2 Makes",
+      "Section": "2.2.3",
+      "FormalDefinition": "Performs routine maintenance and fixes on the product Maintains",
+      "Colloquial": "Performs small, anticipated maintenance",
+      "Examples": "Hair Salons, Cleaning Services",
+      "IO": "N/A"
+    },
+    {
+      "ActivityID": "2.3.1",
+      "Phase": "2 Produces",
+      "Part": "2.3 Repairs + Documents",
+      "Section": "2.3.1",
+      "FormalDefinition": "Diagnoses defective products Diagnoses",
+      "Colloquial": "Researches and diagnoses a problem",
+      "Examples": "Healthcare Diagnostics, Call Centers, Inspections",
+      "IO": "C2ii, C2iii, C3iii"
+    },
+    {
+      "ActivityID": "2.3.2",
+      "Phase": "2 Produces",
+      "Part": "2.3 Repairs + Documents",
+      "Section": "2.3.2",
+      "FormalDefinition": "Performs non-routine repairs on the product Repairs",
+      "Colloquial": "Fixes the product",
+      "Examples": "Healthcare, Car Repair",
+      "IO": "n/a"
+    },
+    {
+      "ActivityID": "2.3.3",
+      "Phase": "2 Produces",
+      "Part": "2.3 Repairs + Documents",
+      "Section": "2.3.3",
+      "FormalDefinition": "Aggregates and manages information relating to the product and the production process Documents",
+      "Colloquial": "Checks that the product is ready for sale",
+      "Examples": "Product Lifecycle Management, Health Record Management",
+      "IO": "C2i"
+    },
+    {
+      "ActivityID": "3.1.1",
+      "Phase": "3 Sells",
+      "Part": "3.1 Sells",
+      "Section": "3.1.1",
+      "FormalDefinition": "Researches, identifies, and recruits potential customers Advertises",
+      "Colloquial": "Advertises the product",
+      "Examples": "Marketing, Consumer Research",
+      "IO": "C2i, C2ii, C2iii, C3ii, C3iii"
+    },
+    {
+      "ActivityID": "3.1.2",
+      "Phase": "3 Sells",
+      "Part": "3.1 Sells",
+      "Section": "3.1.2",
+      "FormalDefinition": "Negotiates the price and sells the product Sells",
+      "Colloquial": "Sells the product",
+      "Examples": "RP: Retail and Online Stores, Dealerships, Vending Machines AP: Sell-side Brokerage",
+      "IO": "C4ii"
+    },
+    {
+      "ActivityID": "3.1.3",
+      "Phase": "3 Sells",
+      "Part": "3.1 Sells",
+      "Section": "3.1.3",
+      "FormalDefinition": "Documents the sale and invoices the client Bills",
+      "Colloquial": "Documents the purchase",
+      "Examples": "Insurance Claims Processing",
+      "IO": "C2iii, C4ii"
+    },
+    {
+      "ActivityID": "3.2.1",
+      "Phase": "3 Sells",
+      "Part": "3.2 Exchanges",
+      "Section": "3.2.1",
+      "FormalDefinition": "Plans and initiates the retrieval of compensation and the transportation of the sold product Processes",
+      "Colloquial": "Plans and initiates payment",
+      "Examples": "Payroll, Billing Support",
+      "IO": "C2i, C2iii, C4ii, C4iii"
+    },
+    {
+      "ActivityID": "3.2.2",
+      "Phase": "3 Sells",
+      "Part": "3.2 Exchanges",
+      "Section": "3.2.2",
+      "FormalDefinition": "Sends the product and retrieves the compensation Exchanges",
+      "Colloquial": "Transports money",
+      "Examples": "Payment Networks, Money Transfers, Bill Pay Services",
+      "IO": "n/a"
+    },
+    {
+      "ActivityID": "3.2.3",
+      "Phase": "3 Sells",
+      "Part": "3.2 Exchanges",
+      "Section": "3.2.3",
+      "FormalDefinition": "Documents the transport and receipt of compensation; if necessary, temporarily stores and reroutes compensation",
+      "Colloquial": "Records that payment has been received",
+      "Examples": "Receivables Collection, Student Loan Servicing",
+      "IO": "C2iii, C4ii"
+    },
+    {
+      "ActivityID": "3.3.1",
+      "Phase": "3 Sells",
+      "Part": "3.3 Stores",
+      "Section": "3.3.1",
+      "FormalDefinition": "Receives and secures assets Secures",
+      "Colloquial": "Loads and unloads money from accounts",
+      "Examples": "Fraud Management, Bank Security, Identity Protection",
+      "IO": "C2iii"
+    },
+    {
+      "ActivityID": "3.3.2",
+      "Phase": "3 Sells",
+      "Part": "3.3 Stores",
+      "Section": "3.3.2",
+      "FormalDefinition": "Stores money, provides funds, and makes external investments Invests",
+      "Colloquial": "Banks",
+      "Examples": "AP: Banking RP: Insurance Companies, Car Rental Agency",
+      "IO": "n/a"
+    },
+    {
+      "ActivityID": "3.3.3",
+      "Phase": "3 Sells",
+      "Part": "3.3 Stores",
+      "Section": "3.3.3",
+      "FormalDefinition": "Aggregates, stores, and manages information relevant to sales and financial assets Accounts",
+      "Colloquial": "Takes inventory of money and assets",
+      "Examples": "Custodian Banking",
+      "IO": "C2ii, C2iii"
+    },
+    {
+      "ActivityID": "4.1.1",
+      "Phase": "4 Manages",
+      "Part": "4.1 Strategizes",
+      "Section": "4.1.1",
+      "FormalDefinition": "Collects and synthesizes information relevant to strategy decisions Researches",
+      "Colloquial": "Researches management plan",
+      "Examples": "Risk Assessment, SWOT Analysis, Actuarial Services",
+      "IO": "C2i, C2ii, C2iii, C3iii"
+    },
+    {
+      "ActivityID": "4.1.2",
+      "Phase": "4 Manages",
+      "Part": "4.1 Strategizes",
+      "Section": "4.1.2",
+      "FormalDefinition": "Plans system's objectives, products, and plan Strategizes",
+      "Colloquial": "Creates a strategy",
+      "Examples": "Investment Advisory, Social Worker, Management Consulting",
+      "IO": "C2iii, C3ii, C3iii"
+    },
+    {
+      "ActivityID": "4.1.3",
+      "Phase": "4 Manages",
+      "Part": "4.1 Strategizes",
+      "Section": "4.1.3",
+      "FormalDefinition": "Signs off on the strategy and ensures that the objectives are in line with the entity's overall goals Validates",
+      "Colloquial": "Validates strategy",
+      "Examples": "Legislators, Board Members",
+      "IO": "C4ii"
+    },
+    {
+      "ActivityID": "4.2.1",
+      "Phase": "4 Manages",
+      "Part": "4.2 Directs",
+      "Section": "4.2.1",
+      "FormalDefinition": "Plans the implementation of the strategic plan by allocating resources and planning the process",
+      "Colloquial": "Plans operations",
+      "Examples": "Budgeting, Asset Management, Operations Consulting",
+      "IO": "C2ii, C2iii, C3iii, C4ii"
+    },
+    {
+      "ActivityID": "4.2.2",
+      "Phase": "4 Manages",
+      "Part": "4.2 Directs",
+      "Section": "4.2.2",
+      "FormalDefinition": "Implements plan; directs and communicates with workforce Directs",
+      "Colloquial": "Directs operations",
+      "Examples": "Management Firms, Government, Investment Fund",
+      "IO": "C4ii"
+    },
+    {
+      "ActivityID": "4.2.3",
+      "Phase": "4 Manages",
+      "Part": "4.2 Directs",
+      "Section": "4.2.3",
+      "FormalDefinition": "Supervises work and compares progress to plans Monitors",
+      "Colloquial": "Supervises operations",
+      "Examples": "Regulation, Supervisors, Legal Services, Compliance Officers",
+      "IO": "C2ii, C2iii, C3iii, C4ii"
+    },
+    {
+      "ActivityID": "4.3.1",
+      "Phase": "4 Manages",
+      "Part": "4.3 Evaluates",
+      "Section": "4.3.1",
+      "FormalDefinition": "Records performance of the system, accounts for assets, and evaluates resources Measures",
+      "Colloquial": "Collects data about the system's operations",
+      "Examples": "Performance Review, Asset Valuation",
+      "IO": "C2ii, C2iii"
+    },
+    {
+      "ActivityID": "4.3.2",
+      "Phase": "4 Manages",
+      "Part": "4.3 Evaluates",
+      "Section": "4.3.2",
+      "FormalDefinition": "Analyzes data gathered in 4.3.1 and uses it to draw conclusions and make predictions Analyzes",
+      "Colloquial": "Analyzes data and creates a management report",
+      "Examples": "Financial Analytics, Accounting, Forecasters",
+      "IO": "C2i, C2iii, C4ii"
+    },
+    {
+      "ActivityID": "4.3.3",
+      "Phase": "4 Manages",
+      "Part": "4.3 Evaluates",
+      "Section": "4.3.3",
+      "FormalDefinition": "Signs off on reports generated in 4.3.2 and compares against plan to see if objectives were achieved. Validates",
+      "Colloquial": "Validates management report",
+      "Examples": "Auditors",
+      "IO": "C2ii, C2iii"
+    }
+],
+  "Resources": [
+    {
+      "ResourceID": "A1.Ali",
+      "Category": "Physical Space",
+      "Stage": "1 Space",
+      "Substage": "Ali",
+      "Description": "Non-demarcated space",
+      "Examples": "Outer Space, Undeveloped Land, Air, or Water"
+    },
+    {
+      "ResourceID": "A1.Alii",
+      "Category": "Physical Space",
+      "Stage": "1 Space",
+      "Substage": "Alii",
+      "Description": "Zoned space",
+      "Examples": "Property, Claimed Land, Air, or Water"
+    } ]
+} 

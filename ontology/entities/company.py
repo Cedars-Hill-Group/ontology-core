@@ -21,8 +21,7 @@ class Company(OntologyEntity):
     focus : str | list[str]
         Primary industry or investment focus (e.g. ``commercial_real_estate``).
     website : str, optional
-    headquarters : str, optional
-    description : str, optional
+  
     """
 
     entity_type: str = "company"
@@ -45,14 +44,6 @@ class Company(OntologyEntity):
     def website(self) -> str | None:
         return self.get("website")
 
-    @property
-    def headquarters(self) -> str | None:
-        return self.get("headquarters")
-
-    @property
-    def description(self) -> str | None:
-        return self.get("description")
-
     # ------------------------------------------------------------------
     # Class-level factory
     # ------------------------------------------------------------------
@@ -70,8 +61,6 @@ class Company(OntologyEntity):
             "firm_type": self.firm_type,
             "focus": self.focus,
             "website": self.website,
-            "headquarters": self.headquarters,
-            "description": self.description,
             **{
                 k: v
                 for k, v in self.metadata.items()
@@ -80,9 +69,7 @@ class Company(OntologyEntity):
                     "name",
                     "firm_type",
                     "focus",
-                    "website",
-                    "headquarters",
-                    "description",
+                    "website"
                 }
             },
         }
