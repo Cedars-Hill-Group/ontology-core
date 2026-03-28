@@ -10,7 +10,7 @@ import pytest
 from ontology.entities.base import OntologyEntity
 from ontology.entities.company import Company
 from ontology.entities.person import Person
-from ontology.entities.project import Project
+from ontology.entities.property import Property
 
 
 class TestOntologyEntityBase:
@@ -122,16 +122,16 @@ class TestPerson:
         assert d["entity_type"] == "person"
 
 
-class TestProject:
-    def test_project_properties(self, tmp_kb: Path) -> None:
-        project = Project(tmp_kb / "projects" / "project-x.md")
-        assert project.name == "Project X"
-        assert project.status == "active"
-        assert project.client == "Alpha PE"
-        assert project.firm_type == ["private_equity"]
-        assert project.focus == ["healthcare"]
+class TestProperty:
+    def test_property_properties(self, tmp_kb: Path) -> None:
+        prop = Property(tmp_kb / "properties" / "property-x.md")
+        assert prop.name == "Property X"
+        assert prop.status == "active"
+        assert prop.client == "Alpha PE"
+        assert prop.firm_type == ["private_equity"]
+        assert prop.focus == ["healthcare"]
 
     def test_to_dict_includes_entity_type(self, tmp_kb: Path) -> None:
-        project = Project(tmp_kb / "projects" / "project-x.md")
-        d = project.to_dict()
-        assert d["entity_type"] == "project"
+        prop = Property(tmp_kb / "properties" / "property-x.md")
+        d = prop.to_dict()
+        assert d["entity_type"] == "property"

@@ -4,14 +4,14 @@
 
 knowledge_base:
   # Absolute or relative path to the root directory that contains the
-  # markdown files for people, companies, and projects.
+  # markdown files for people, companies, and properties.
   path: "/path/to/your/knowledge-base"
 
   # Optional subdirectory names within the knowledge_base path.
   # Defaults shown below — override only if your structure differs.
   companies_dir: "companies"
   people_dir: "people"
-  projects_dir: "projects"
+  properties_dir: "properties"
 
 output:
   # Directory where generated JSON artefacts are written.

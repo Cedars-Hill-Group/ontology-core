@@ -31,7 +31,7 @@ ontology-core/
 │   │   ├── base.py              # OntologyEntity base class
 │   │   ├── company.py           # Company entity
 │   │   ├── person.py            # Person entity
-│   │   ├── project.py           # Property entity
+│   │   ├── property.py          # Property entity
 │   │   └── utils.py             # Shared helpers (e.g. as_list)
 │   ├── properties/              # Property value layer
 │   │    ├── __init__.py
@@ -145,13 +145,13 @@ The CLI and config loader expect a `config.yaml` file at the repository root.  T
      # Optional — override only if your directory names differ from the defaults
      companies_dir: "companies"   # default
      people_dir: "people"         # default
-     projects_dir: "projects"     # default
+    properties_dir: "properties" # default
 
    output:
      path: "output"   # relative or absolute; created automatically if absent
    ```
 
-The knowledge base directory is expected to contain subdirectories named `companies/`, `people/`, and `projects/` (or whatever names you configure), each holding `.md` files with YAML front matter.
+The knowledge base directory is expected to contain subdirectories named `companies/`, `people/`, and `properties/` (or whatever names you configure), each holding `.md` files with YAML front matter.
 
 ---
 
@@ -191,11 +191,11 @@ Both commands:
 ```python
 from ontology.entities.company import Company
 from ontology.entities.person import Person
-from ontology.entities.project import Project
+from ontology.entities.property import Property
 
 companies = Company.iter_directory("/path/to/kb/companies")
 people    = Person.iter_directory("/path/to/kb/people")
-projects  = Project.iter_directory("/path/to/kb/projects")
+properties = Property.iter_directory("/path/to/kb/properties")
 
 for company in companies:
     print(company.name, company.firm_type, company.focus)
@@ -250,7 +250,7 @@ Knowledge Base (Markdown files)
         │  YAML front matter: name, firm_type, focus, ...
         ▼
   OntologyEntity subclasses
-  (Company / Person / Project)
+  (Company / Person / Property)
         │
         │  .iter_directory(path)
         ▼

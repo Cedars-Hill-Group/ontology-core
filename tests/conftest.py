@@ -13,10 +13,10 @@ def tmp_kb(tmp_path: Path) -> Path:
     """Return a temporary knowledge-base directory with sample entity files."""
     companies = tmp_path / "companies"
     people = tmp_path / "people"
-    projects = tmp_path / "projects"
+    properties = tmp_path / "properties"
     companies.mkdir()
     people.mkdir()
-    projects.mkdir()
+    properties.mkdir()
 
     # --- Companies ---
     (companies / "alpha-pe.md").write_text(
@@ -83,12 +83,12 @@ def tmp_kb(tmp_path: Path) -> Path:
         encoding="utf-8",
     )
 
-    # --- Projects ---
-    (projects / "project-x.md").write_text(
+    # --- Properties ---
+    (properties / "property-x.md").write_text(
         textwrap.dedent(
             """\
             ---
-            name: Project X
+            name: Property X
             firm_type: private_equity
             focus: healthcare
             status: active

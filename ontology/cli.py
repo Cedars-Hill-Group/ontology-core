@@ -48,12 +48,12 @@ def main(argv: list[str] | None = None) -> int:
     if kb_cfg:
         from ontology.entities.company import Company
         from ontology.entities.person import Person
-        from ontology.entities.project import Project
+        from ontology.entities.property import Property
 
         entity_dirs = {
             kb_cfg.get("companies_dir", "companies"): Company,
             kb_cfg.get("people_dir", "people"): Person,
-            kb_cfg.get("projects_dir", "projects"): Project,
+            kb_cfg.get("properties_dir", "properties"): Property,
         }
 
     collector = PropertyCollector(kb_path, entity_dirs=entity_dirs or None)

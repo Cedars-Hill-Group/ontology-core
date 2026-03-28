@@ -13,7 +13,7 @@ from typing import Any
 
 from ontology.entities.company import Company
 from ontology.entities.person import Person
-from ontology.entities.project import Project
+from ontology.entities.property import Property
 from ontology.properties.models import PropertyCatalog, PropertyValue
 
 # ---------------------------------------------------------------------------
@@ -182,17 +182,17 @@ class PropertyCollector:
     ----------
     knowledge_base_path:
         Root directory of the knowledge base.  The collector looks for
-        subdirectories named ``companies``, ``people``, and ``projects``
+        subdirectories named ``companies``, ``people``, and ``properties``
         (configurable via *entity_dirs*).
     entity_dirs:
         Optional mapping of entity type to subdirectory name.  Defaults to
-        ``{"companies": Company, "people": Person, "projects": Project}``.
+        ``{"companies": Company, "people": Person, "properties": Property}``.
     """
 
     _DEFAULT_ENTITY_DIRS: dict[str, type] = {
         "companies": Company,
         "people": Person,
-        "projects": Project,
+        "properties": Property,
     }
 
     def __init__(

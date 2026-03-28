@@ -1,4 +1,4 @@
-"""Project entity."""
+"""Property entity."""
 
 from __future__ import annotations
 
@@ -9,17 +9,17 @@ from ontology.entities.base import OntologyEntity
 from ontology.entities.utils import as_list
 
 
-class Project(OntologyEntity):
-    """A client engagement or internal project tracked in the knowledge base.
+class Property(OntologyEntity):
+    """A property tracked in the knowledge base.
 
     Expected front matter fields
     ----------------------------
     name : str
-        Project name.
+        Property name.
     firm_type : str | list[str], optional
         Category of the client firm.
     focus : str | list[str], optional
-        Primary industry or investment focus of the project.
+        Primary industry or investment focus of the property.
     status : str, optional
         Lifecycle stage (e.g. ``active``, ``closed``, ``pipeline``).
     client : str, optional
@@ -27,7 +27,7 @@ class Project(OntologyEntity):
     description : str, optional
     """
 
-    entity_type: str = "project"
+    entity_type: str = "property"
 
     @property
     def firm_type(self) -> list[str]:
@@ -50,12 +50,12 @@ class Project(OntologyEntity):
         return self.get("description")
 
     @classmethod
-    def iter_directory(cls, directory: str | Path) -> list["Project"]:  # type: ignore[override]
-        """Return a list of :class:`Project` objects from a directory of ``.md`` files."""
+    def iter_directory(cls, directory: str | Path) -> list["Property"]:  # type: ignore[override]
+        """Return a list of :class:`Property` objects from a directory of ``.md`` files."""
         return super().iter_directory(directory)  # type: ignore[return-value]
 
     def to_dict(self) -> dict[str, Any]:
-        """Serialise the project's properties to a plain dictionary."""
+        """Serialise the property's properties to a plain dictionary."""
         return {
             "entity_type": self.entity_type,
             "name": self.name,
@@ -78,5 +78,3 @@ class Project(OntologyEntity):
                 }
             },
         }
-
-
