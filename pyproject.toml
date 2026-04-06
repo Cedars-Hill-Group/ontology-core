@@ -20,8 +20,8 @@ dev = [
     "ruff",
 ]
 
-[project.scripts]
-ontology-collect = "ontology.cli:main"
+[tool.setuptools.package-data]
+ontology = ["catalogs/*.json"]
 
 [tool.setuptools.packages.find]
 where = ["."]

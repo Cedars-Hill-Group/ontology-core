@@ -1,0 +1,106 @@
+{
+  "$ontology_id": "naics",
+  "$schema_version": "1.0.0",
+  "naics_sectors": [
+    {
+      "code": "11",
+      "title": "Agriculture, Forestry, Fishing and Hunting",
+      "description": "Industries engaged in growing crops, raising animals, harvesting timber, and harvesting fish and other animals from farms or natural habitats."
+    },
+    {
+      "code": "21",
+      "title": "Mining, Quarrying, and Oil and Gas Extraction",
+      "description": "Industries that extract naturally occurring minerals, oil, and gas; includes quarrying, drilling, and support services."
+    },
+    {
+      "code": "22",
+      "title": "Utilities",
+      "description": "Electric power, natural gas, water supply, and sewage system providers delivering essential utility services."
+    },
+    {
+      "code": "23",
+      "title": "Construction",
+      "description": "Industries involved in building structures, heavy civil engineering, and specialized trade contracting."
+    },
+    {
+      "code": "31-33",
+      "title": "Manufacturing",
+      "description": "Industries that transform raw materials into new products through mechanical, physical, or chemical processes."
+    },
+    {
+      "code": "42",
+      "title": "Wholesale Trade",
+      "description": "Businesses engaged in selling goods in large quantities to retailers, industrial users, or other wholesalers."
+    },
+    {
+      "code": "44-45",
+      "title": "Retail Trade",
+      "description": "Businesses that sell merchandise in small quantities directly to consumers through stores or online channels."
+    },
+    {
+      "code": "48-49",
+      "title": "Transportation and Warehousing",
+      "description": "Industries providing transportation of passengers and cargo, warehousing, storage, and logistics services."
+    },
+    {
+      "code": "51",
+      "title": "Information",
+      "description": "Industries that produce, distribute, or process information, including media, telecommunications, and data services."
+    },
+    {
+      "code": "52",
+      "title": "Finance and Insurance",
+      "description": "Industries involved in financial transactions, banking, investment, insurance, and risk pooling."
+    },
+    {
+      "code": "53",
+      "title": "Real Estate and Rental and Leasing",
+      "description": "Industries that rent, lease, or manage real estate and tangible assets such as equipment or vehicles."
+    },
+    {
+      "code": "54",
+      "title": "Professional, Scientific, and Technical Services",
+      "description": "Industries offering specialized professional services such as legal, accounting, engineering, consulting, and research."
+    },
+    {
+      "code": "55",
+      "title": "Management of Companies and Enterprises",
+      "description": "Holding companies and corporate headquarters that oversee and manage other establishments."
+    },
+    {
+      "code": "56",
+      "title": "Administrative and Support and Waste Management and Remediation Services",
+      "description": "Industries providing support services such as staffing, facilities management, security, cleaning, and waste remediation."
+    },
+    {
+      "code": "61",
+      "title": "Educational Services",
+      "description": "Schools, training centers, and institutions providing instruction and educational support services."
+    },
+    {
+      "code": "62",
+      "title": "Health Care and Social Assistance",
+      "description": "Industries providing medical care, social assistance, and support services for individuals and families."
+    },
+    {
+      "code": "71",
+      "title": "Arts, Entertainment, and Recreation",
+      "description": "Industries providing cultural, entertainment, and recreational services such as museums, theaters, and fitness centers."
+    },
+    {
+      "code": "72",
+      "title": "Accommodation and Food Services",
+      "description": "Industries providing lodging, meals, and beverages for immediate consumption."
+    },
+    {
+      "code": "81",
+      "title": "Other Services (except Public Administration)",
+      "description": "Miscellaneous service industries such as repair services, personal care, and nonprofit organizations."
+    },
+    {
+      "code": "92",
+      "title": "Public Administration",
+      "description": "Federal, state, and local government agencies administering public programs and services."
+    }
+  ]
+}

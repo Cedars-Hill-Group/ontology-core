@@ -9,11 +9,10 @@ Central library of the canonical object models for the CHG Operating System.
 - [Project Structure](#project-structure)
 - [Key Concepts](#key-concepts)
 - [Installation](#installation)
-- [Configuration](#configuration)
 - [Usage](#usage)
-  - [CLI](#cli)
-  - [Python API](#python-api)
-- [Workflow](#workflow)
+  - [Accessing Catalogs](#accessing-catalogs)
+  - [Working with Entities](#working-with-entities)
+- [Architecture](#architecture)
 - [Importing into Other Projects](#importing-into-other-projects)
 
 ---
@@ -24,8 +23,6 @@ Central library of the canonical object models for the CHG Operating System.
 ontology-core/
 ├── ontology/                    # Main Python package
 │   ├── __init__.py
-│   ├── cli.py                   # CLI entry point (ontology-collect command)
-│   ├── config.py                # Config loader (config.yaml → Python dict)
 │   ├── entities/                # Entity object models
 │   │   ├── __init__.py
 │   │   ├── base.py              # OntologyEntity base class
@@ -33,28 +30,31 @@ ontology-core/
 │   │   ├── person.py            # Person entity
 │   │   ├── property.py          # Property entity
 │   │   └── utils.py             # Shared helpers (e.g. as_list)
-│   ├── properties/              # Property value layer
-│   │    ├── __init__.py
-│   │    ├── collector.py        # PropertyCollector — walks KB and collects values
-│   │    └── models.py           # Pydantic models: PropertyValue, PropertyCatalog
+│   ├── catalogs/                # Canonical ontology catalogs (JSON)
+│   │   ├── attributes.json      # firm_type and focus classifications
+│   │   ├── naics.json           # NAICS sector classification
+│   │   └── activity_cycle.json  # Activity/process classifications
+│   ├── registry/                # Ontology catalog registry and API
+│   │   ├── __init__.py          # Public API: get_catalog, list_catalogs, get_catalog_version
+│   │   ├── catalog.py           # CatalogRegistry class
+│   │   ├── loader.py            # importlib-based catalog loader
+│   │   └── version.py           # Ontology versioning
 │   │ 
-│   └── objects/                 # Ontology object models (documents, PDFs, emails, etc.)
+│   └── core/                    # [Phase 2+] Formal ontology type system
 │
 ├── schemas/                     # Markdown front-matter templates
 │   ├── general/                 # Generic entity templates
 │   │   ├── template.md
 │   │   ├── extraction.md
 │   │   └── output.md
-│   └── commercial_real_estate/  # CRE-specific templates (extra front-matter fields)
+│   └── commercial_real_estate/  # CRE-specific templates
 │       ├── template.md
 │       ├── extraction.md
 │       └── output.md
 ├── tests/                       # pytest test suite
 │   ├── conftest.py
-│   ├── test_config.py
 │   ├── test_entities.py
-│   └── test_properties.py
-├── config.yaml.example          # Configuration template — copy to config.yaml
+│   └── test_registry.py
 ├── pyproject.toml               # Package metadata and tool configuration
 └── README.md
 ```
@@ -62,47 +62,31 @@ ontology-core/
 ---
 
 ## Key Concepts
+Catalogs
+
+Ontology catalogs are canonical, versioned JSON files that define allowed values and classifications:
+
+| Catalog | Purpose | Content |
+|---------|---------|---------|
+| `attributes` | Firm and focus classifications | `firm_type` and `focus` values with descriptions |
+| `naics` | Industry classification | NAICS sector codes and titles |
+| `activity_cycle` | Process/activity taxonomy | Hierarchical activity classifications |
+
+Each catalog carries metadata:
+- `$ontology_id`: unique identifier (e.g., `"attributes"`)
+- `$schema_version`: SemVer version (e.g., `"1.0.0"`)
+
+Catalogs are first-class ontology assets shipped as part of the package and accessible via the registry API.
 
 ### Entities
 
-Every entity in the knowledge base is a Markdown file whose **YAML front matter** contains structured metadata and whose body contains free-form prose.
+Entity classes (Company, Person, Property) represent instances of real-world objects. They optionally integrate with knowledge base Markdown files via the `OntologyEntity` base class, which provides:
 
-| Class | `entity_type` | Key front-matter fields |
-|-------|--------------|-------------------------|
-| `Company` | `company` | `name`, `firm_type`, `focus`, `website`, `city`, `state` |
-| `Person` | `person` | `name`, `focus`, `company`, `emails`, `phones`, `linkedin` |
-| `Property` | `property` | `name`, `address`, `city`, `state`, `zip`, `prop_type` |
-
-All three extend `OntologyEntity`, which provides:
-
-- `name` — human-readable name from front matter, falling back to the filename stem.
+- `name` — human-readable name from front matter or filename.
 - `metadata` — all front-matter fields as a plain `dict`.
-- `content` — the Markdown body text.
-- `get(key, default)` — type-safe accessor for individual front-matter values.
-- `iter_directory(path)` — class method that loads every `.md` file in a directory and returns a sorted list of entity instances.
-
-### PropertyValue and PropertyCatalog
-
-`PropertyValue` pairs a normalised snake_case identifier with a human-readable description:
-
-```json
-{
-  "value": "private_equity",
-  "description": "A private equity firm that invests in private companies ..."
-}
-```
-
-`PropertyCatalog` is the top-level JSON output that groups allowed values for `firm_type` and `focus`:
-
-```json
-{
-  "firm_type": [ { "value": "...", "description": "..." }, ... ],
-  "focus":     [ { "value": "...", "description": "..." }, ... ]
-}
-```
-
-### PropertyCollector
-
+- `content` — Markdown body text.
+- `get(key, default)` — accessor for individual front-matter values.
+- `iter_directory(path)` — load all `.md` files from a directory
 `PropertyCollector` walks the knowledge base, reads every entity file, normalises the `firm_type` and `focus` values (lowercased, whitespace/hyphens collapsed to underscores), and assembles a `PropertyCatalog`.  Built-in description tables enrich common values; newly discovered values receive an auto-generated placeholder description.
 
 ---
@@ -126,48 +110,36 @@ pip install -e .
 
 ---
 
-## Configuration
-
-The CLI and config loader expect a `config.yaml` file at the repository root.  This file is **git-ignored** to protect local paths.
-
-1. Copy the example file:
-
-   ```bash
-   cp config.yaml.example config.yaml
-   ```
-
-2. Edit `config.yaml` and set the paths for your environment:
-
-   ```yaml
-   knowledge_base:
-     path: "/absolute/path/to/your/knowledge-base"
-
-     # Optional — override only if your directory names differ from the defaults
-     companies_dir: "companies"   # default
-     people_dir: "people"         # default
-    properties_dir: "properties" # default
-
-   output:
-     path: "output"   # relative or absolute; created automatically if absent
-   ```
-
-The knowledge base directory is expected to contain subdirectories named `companies/`, `people/`, and `properties/` (or whatever names you configure), each holding `.md` files with YAML front matter.
-
----
-
-## Usage
-
-### CLI
-
-After installing the package the `ontology-collect` command is available on your `PATH`:
 
 ```bash
-ontology-collect
+# From the repository root
+pip install -e ".[dev]"
 ```
 
-Alternatively, run the module directly without installing:
+The `[dev]` extra installs `pytest`, `pytest-cov`, and `ruff`.
+
+### Production
 
 ```bash
+pip install -e .
+```
+
+### From GitHub
+
+Pin to a specific version:
+
+```bash
+pip install git+https://github.com/rounder22/ontology-core.git@v0.2.0
+```
+
+Or add to `pyproject.toml`:
+
+```toml
+[project]
+dependencies = [
+    "ontology-core @ git+https://github.com/rounder22/ontology-core.git@v0.2.0",
+]
+```
 python -m ontology.cli
 ```
 
@@ -185,6 +157,20 @@ Both commands:
    ```
 
 ### Python API
+Accessing Catalogs
+
+Load catalogs using the registry API:
+
+```python
+from ontology.registry import get_catalog, list_catalogs, get_catalog_version
+
+# List all available catalogs
+catalogs = list_catalogs()
+print(catalogs)  # ["attributes", "naics", "activity_cycle"]
+
+# Load a catalog
+attributes = get_catalog("attributes")
+Entity classes are optional and designed for applications that use Markdown knowledge bases. They integrate with catalogs but are not required for catalog access.
 
 #### Loading entities from a directory
 
@@ -212,33 +198,6 @@ print(company.firm_type)     # ["private_equity"]
 print(company.focus)         # ["commercial_real_estate"]
 print(company.metadata)      # full front-matter dict
 print(company.content)       # Markdown body
-```
-
-#### Collecting property values programmatically
-
-```python
-from ontology.properties.collector import PropertyCollector
-
-collector = PropertyCollector("/path/to/knowledge-base")
-catalog   = collector.collect()
-
-# Inspect values
-for pv in catalog.firm_type:
-    print(pv.value, "—", pv.description)
-
-# Save to JSON
-catalog.save("output/properties.json")
-```
-
-#### Loading a saved catalog
-
-```python
-from ontology.properties.models import PropertyCatalog
-
-catalog = PropertyCatalog.load("output/properties.json")
-print(catalog.firm_type)
-print(catalog.focus)
-```
 
 ---
 
@@ -267,63 +226,100 @@ Knowledge Base (Markdown files)
 
 1. **Markdown files** in the knowledge base carry structured metadata in YAML front matter.
 2. **Entity classes** parse those files and expose typed accessors for each property.
-3. **`PropertyCollector`** walks the knowledge base, gathers every unique `firm_type` and `focus` value, normalises it to snake_case, and pairs it with a human-readable description.
-4. **`PropertyCatalog`** is serialised to `properties.json` and consumed by downstream systems (data ingestion pipelines, LLM classification prompts, domain services, etc.).
+3. Architecture
 
----
+### Catalog-First Distribution
 
-## Importing into Other Projects
-
-`ontology-core` is a standard Python package and can be consumed as a library dependency.
-
-### Install directly from GitHub
-
-```bash
-pip install git+https://github.com/rounder22/ontology-core.git
+```
+Canonical Catalogs (JSON)
+  ├─ attributes.json
+  ├─ naics.json
+  └─ activity_cycle.json
+       │
+       │  Packaged as ontology/catalogs/*.json
+       │  (included in installed wheel)
+       ▼
+  CatalogRegistry
+       │
+       │  importlib.resources loader
+       │  in-memory caching
+       ▼
+  Public API: get_catalog(name, version=None)
+       │
+       ├─► Downstream Python applications
+       ├─► LLM pipelines (enum values, descriptions)
+       ├─► Database schema generators
+       └─► Documentation tools
 ```
 
-Pin to a specific tag or commit for reproducible builds:
+### Entities (Optional Markdown Adapter)
+
+Entity classes are designed for applications that use knowledge bases with Markdown files:
+
+```
+Markdown Knowledge Base
+  └─ companies/distributed as a wheel that includes catalogs as package data.
+
+### Install from GitHub
+
+Pin to a specific version:
 
 ```bash
-pip install git+https://github.com/rounder22/ontology-core.git@v0.1.0
-pip install git+https://github.com/rounder22/ontology-core.git@<commit-sha>
+pip install git+https://github.com/rounder22/ontology-core.git@v0.2.0
 ```
 
-### Add to `pyproject.toml`
+Or use in `pyproject.toml`:
 
 ```toml
 [project]
 dependencies = [
-    "ontology-core @ git+https://github.com/rounder22/ontology-core.git@v0.1.0",
+    "ontology-core @ git+https://github.com/rounder22/ontology-core.git@v0.2.0",
 ]
 ```
 
-### Add to `requirements.txt`
+### Usage in Downstream Projects
 
-```
-ontology-core @ git+https://github.com/rounder22/ontology-core.git@v0.1.0
+**Minimal usage (catalogs only):**
+
+```python
+from ontology.registry import get_catalog, list_catalogs
+
+# No knowledge base required — standalone catalog access
+attributes = get_catalog("attributes")
+firm_types = {entry["value"]: entry["description"] 
+              for entry in attributes["firm_type"]}
 ```
 
-### Example usage in a downstream project
+**With entity parsing (requires knowledge base):**
 
 ```python
 from ontology.entities.company import Company
-from ontology.entities.person import Person
-from ontology.properties.collector import PropertyCollector
-from ontology.properties.models import PropertyCatalog
+from ontology.registry import get_catalog
 
-# Load entities
+# Load catalogs
+attributes = get_catalog("attributes")
+
+# Load entities from knowledge base
 companies = Company.iter_directory("/path/to/kb/companies")
-
-# Load a pre-built catalog (no knowledge base required)
-catalog = PropertyCatalog.load("/path/to/properties.json")
-allowed_firm_types = [pv.value for pv in catalog.firm_type]
-
-# Or collect fresh from a knowledge base
-collector = PropertyCollector("/path/to/knowledge-base")
-catalog   = collector.collect()
+for company in companies:
+    # Entity properties are validated against catalogs in Phase 2+
+    print(company.name, company.firm_type, company.focus)
 ```
 
+### Runtime Dependencies
+
+Core library:
+
+| Package | Purpose | When needed |
+|---------|---------|-------------|
+| (none) | Catalog access is pure Python | Always |
+| `python-frontmatter>=1.1.0` | Parse Markdown entity files | Only if using entity classes |
+
+Python **3.10 or newer** is required.
+
+### Optional: Non-Python Consumers
+
+For non-Python services, download catalogs from GitHub Releases as `ontology-artifacts-1.0.0.zip` (available starting in Phase 3)
 ### Runtime dependencies
 
 When installed as a library the following packages are required (declared in `pyproject.toml` and installed automatically):

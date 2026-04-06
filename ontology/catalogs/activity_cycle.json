@@ -1,4 +1,7 @@
-{"ActivityCycle": [
+{
+  "$ontology_id": "activity_cycle",
+  "$schema_version": "1.0.0",
+  "ActivityCycle": [
     {
       "ActivityID": "1.1.1",
       "Phase": "1 Procures",
