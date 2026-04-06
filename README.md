@@ -9,6 +9,8 @@ Central library of the canonical object models for the CHG Operating System.
 - [Project Structure](#project-structure)
 - [Key Concepts](#key-concepts)
 - [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Documentation](#documentation)
 - [Usage](#usage)
   - [Accessing Catalogs](#accessing-catalogs)
   - [Working with Entities](#working-with-entities)
@@ -42,6 +44,11 @@ ontology-core/
 │   │ 
 │   └── core/                    # [Phase 2+] Formal ontology type system
 │
+├── docs/                        # Comprehensive documentation
+│   ├── API.md                   # Complete API reference
+│   ├── INTEGRATION.md           # Integration guide for downstream apps
+│   ├── CATALOG_FORMAT.md        # Formal catalog specifications
+│   └── README.md                # Documentation index
 ├── schemas/                     # Markdown front-matter templates
 │   ├── general/                 # Generic entity templates
 │   │   ├── template.md
