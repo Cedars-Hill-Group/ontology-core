@@ -1,129 +1,54 @@
-*# ontology-core
+## ontology-core
 
-Central library of the canonical object models for the CHG Operating System.
+Central library for canonical ontology entities, catalogs, and release-build artifacts used by CHG knowledge systems.
 
 ---
 
-## Table of Contents
+## What Is New
 
-- [Project Structure](#project-structure)
-- [Key Concepts](#key-concepts)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Documentation](#documentation)
-- [Usage](#usage)
-  - [Accessing Catalogs](#accessing-catalogs)
-  - [Working with Entities](#working-with-entities)
-- [Architecture](#architecture)
-- [Importing into Other Projects](#importing-into-other-projects)
+This repository now includes a release builder that can:
+
+1. Read markdown knowledge-base entities (`companies`, `people`, `properties`).
+2. Extract links from markdown bodies and metadata references.
+3. Synthesize object types for an ontology payload.
+4. Merge user-defined actions/functions from external JSON registries.
+5. Emit a date-versioned release bundle with checksummed artifacts.
+
+This is the first implementation slice for the larger flow:
+markdown knowledge base -> versioned ontology bundle -> GCS publish -> graph load (Node.js) -> MCP exposure.
 
 ---
 
 ## Project Structure
 
-```
+```text
 ontology-core/
-├── ontology/                    # Main Python package
-│   ├── __init__.py
-│   ├── entities/                # Entity object models
-│   │   ├── __init__.py
-│   │   ├── base.py              # OntologyEntity base class
-│   │   ├── company.py           # Company entity
-│   │   ├── person.py            # Person entity
-│   │   ├── property.py          # Property entity
-│   │   └── utils.py             # Shared helpers (e.g. as_list)
-│   ├── catalogs/                # Canonical ontology catalogs (JSON)
-│   │   ├── attributes.json      # firm_type and focus classifications
-│   │   ├── naics.json           # NAICS sector classification
-│   │   └── activity_cycle.json  # Activity/process classifications
-│   ├── registry/                # Ontology catalog registry and API
-│   │   ├── __init__.py          # Public API: get_catalog, list_catalogs, get_catalog_version
-│   │   ├── catalog.py           # CatalogRegistry class
-│   │   ├── loader.py            # importlib-based catalog loader
-│   │   └── version.py           # Ontology versioning
-│   │ 
-│   └── core/                    # [Phase 2+] Formal ontology type system
-│
-├── docs/                        # Comprehensive documentation
-│   ├── API.md                   # Complete API reference
-│   ├── INTEGRATION.md           # Integration guide for downstream apps
-│   ├── CATALOG_FORMAT.md        # Formal catalog specifications
-│   └── README.md                # Documentation index
-├── schemas/                     # Markdown front-matter templates
-│   ├── general/                 # Generic entity templates
-│   │   ├── template.md
-│   │   ├── extraction.md
-│   │   └── output.md
-│   └── commercial_real_estate/  # CRE-specific templates
-│       ├── template.md
-│       ├── extraction.md
-│       └── output.md
-├── tests/                       # pytest test suite
-│   ├── conftest.py
-│   ├── test_entities.py
-│   └── test_registry.py
-├── pyproject.toml               # Package metadata and tool configuration
-└── README.md
+├── ontology/
+│   ├── entities/                # Markdown entity adapters
+│   ├── catalogs/                # Canonical catalogs
+│   ├── registry/                # Catalog registry APIs
+│   └── build/                   # New release builder pipeline
+│       ├── __init__.py
+│       ├── models.py
+│       ├── link_extractor.py
+│       ├── registry_loader.py
+│       └── pipeline.py
+├── schemas/
+├── docs/
+└── tests/
+    ├── test_entities.py
+    └── test_build.py
 ```
-
----
-
-## Key Concepts
-Catalogs
-
-Ontology catalogs are canonical, versioned JSON files that define allowed values and classifications:
-
-| Catalog | Purpose | Content |
-|---------|---------|---------|
-| `attributes` | Firm and focus classifications | `firm_type` and `focus` values with descriptions |
-| `naics` | Industry classification | NAICS sector codes and titles |
-| `activity_cycle` | Process/activity taxonomy | Hierarchical activity classifications |
-
-Each catalog carries metadata:
-- `$ontology_id`: unique identifier (e.g., `"attributes"`)
-- `$schema_version`: SemVer version (e.g., `"1.0.0"`)
-
-Catalogs are first-class ontology assets shipped as part of the package and accessible via the registry API.
-
-### Entities
-
-Entity classes (Company, Person, Property) represent instances of real-world objects. They optionally integrate with knowledge base Markdown files via the `OntologyEntity` base class, which provides:
-
-- `name` — human-readable name from front matter or filename.
-- `metadata` — all front-matter fields as a plain `dict`.
-- `content` — Markdown body text.
-- `get(key, default)` — accessor for individual front-matter values.
-- `iter_directory(path)` — load all `.md` files from a directory
-`PropertyCollector` walks the knowledge base, reads every entity file, normalises the `firm_type` and `focus` values (lowercased, whitespace/hyphens collapsed to underscores), and assembles a `PropertyCatalog`.  Built-in description tables enrich common values; newly discovered values receive an auto-generated placeholder description.
 
 ---
 
 ## Installation
 
-### Development / local
+### Development
 
 ```bash
-# From the repository root
 pip install -e ".[dev]"
 ```
-
-The `[dev]` extra installs `pytest`, `pytest-cov`, and `ruff`.
-
-### Production (no dev tools)
-
-```bash
-pip install -e .
-```
-
----
-
-
-```bash
-# From the repository root
-pip install -e ".[dev]"
-```
-
-The `[dev]` extra installs `pytest`, `pytest-cov`, and `ruff`.
 
 ### Production
 
@@ -131,211 +56,265 @@ The `[dev]` extra installs `pytest`, `pytest-cov`, and `ruff`.
 pip install -e .
 ```
 
-### From GitHub
-
-Pin to a specific version:
-
-```bash
-pip install git+https://github.com/rounder22/ontology-core.git@v0.2.0
-```
-
-Or add to `pyproject.toml`:
-
-```toml
-[project]
-dependencies = [
-    "ontology-core @ git+https://github.com/rounder22/ontology-core.git@v0.2.0",
-]
-```
-python -m ontology.cli
-```
-
-Both commands:
-
-1. Read `config.yaml`.
-2. Walk the knowledge base and collect all unique `firm_type` and `focus` values.
-3. Write a normalised `properties.json` to the configured output directory.
-4. Print a summary:
-
-   ```
-   Written: /path/to/output/properties.json
-     firm_type values : 5
-     focus values     : 8
-   ```
-
-### Python API
-Accessing Catalogs
-
-Load catalogs using the registry API:
-
-```python
-from ontology.registry import get_catalog, list_catalogs, get_catalog_version
-
-# List all available catalogs
-catalogs = list_catalogs()
-print(catalogs)  # ["attributes", "naics", "activity_cycle"]
-
-# Load a catalog
-attributes = get_catalog("attributes")
-Entity classes are optional and designed for applications that use Markdown knowledge bases. They integrate with catalogs but are not required for catalog access.
-
-#### Loading entities from a directory
-
-```python
-from ontology.entities.company import Company
-from ontology.entities.person import Person
-from ontology.entities.property import Property
-
-companies = Company.iter_directory("/path/to/kb/companies")
-people    = Person.iter_directory("/path/to/kb/people")
-properties = Property.iter_directory("/path/to/kb/properties")
-
-for company in companies:
-    print(company.name, company.firm_type, company.focus)
-```
-
-#### Loading a single entity
-
-```python
-from ontology.entities.company import Company
-
-company = Company("/path/to/kb/companies/acme-capital.md")
-print(company.name)          # "Acme Capital"
-print(company.firm_type)     # ["private_equity"]
-print(company.focus)         # ["commercial_real_estate"]
-print(company.metadata)      # full front-matter dict
-print(company.content)       # Markdown body
+Python 3.10+ is required.
 
 ---
 
-## Workflow
+## Quickstart (Copy/Paste)
 
-```
-Knowledge Base (Markdown files)
-        │
-        │  YAML front matter: name, firm_type, focus, ...
-        ▼
-  OntologyEntity subclasses
-  (Company / Person / Property)
-        │
-        │  .iter_directory(path)
-        ▼
-  PropertyCollector.collect()
-        │
-        │  normalise → deduplicate → enrich with descriptions
-        ▼
-  PropertyCatalog  ──►  properties.json
-        │
-        │  consumed by downstream layers
-        ▼
-  Data pipelines / LLM prompts / domain services
+Use this minimal example to generate a release bundle in one run.
+
+### 1) Create a sample knowledge base
+
+```text
+tmp-kb/
+  companies/
+    alpha-pe.md
+  people/
+    jane-smith.md
+  properties/
+    property-x.md
+  definitions/
+    actions.json
+    functions.json
 ```
 
-1. **Markdown files** in the knowledge base carry structured metadata in YAML front matter.
-2. **Entity classes** parse those files and expose typed accessors for each property.
-3. Architecture
+`tmp-kb/companies/alpha-pe.md`:
 
-### Catalog-First Distribution
-
-```
-Canonical Catalogs (JSON)
-  ├─ attributes.json
-  ├─ naics.json
-  └─ activity_cycle.json
-       │
-       │  Packaged as ontology/catalogs/*.json
-       │  (included in installed wheel)
-       ▼
-  CatalogRegistry
-       │
-       │  importlib.resources loader
-       │  in-memory caching
-       ▼
-  Public API: get_catalog(name, version=None)
-       │
-       ├─► Downstream Python applications
-       ├─► LLM pipelines (enum values, descriptions)
-       ├─► Database schema generators
-       └─► Documentation tools
+```md
+---
+name: Alpha PE
+firm_type: private_equity
+focus: [technology, healthcare]
+website: https://alphape.example.com
+---
+See [Property X](../properties/property-x.md)
 ```
 
-### Entities (Optional Markdown Adapter)
+`tmp-kb/people/jane-smith.md`:
 
-Entity classes are designed for applications that use knowledge bases with Markdown files:
-
-```
-Markdown Knowledge Base
-  └─ companies/distributed as a wheel that includes catalogs as package data.
-
-### Install from GitHub
-
-Pin to a specific version:
-
-```bash
-pip install git+https://github.com/rounder22/ontology-core.git@v0.2.0
+```md
+---
+name: Jane Smith
+title: Managing Director
+company: Alpha PE
+email: jane@alphape.example.com
+---
+Primary sponsor for [Alpha PE](../companies/alpha-pe.md)
 ```
 
-Or use in `pyproject.toml`:
+`tmp-kb/properties/property-x.md`:
 
-```toml
-[project]
-dependencies = [
-    "ontology-core @ git+https://github.com/rounder22/ontology-core.git@v0.2.0",
-]
+```md
+---
+name: Property X
+status: active
+client: Alpha PE
+---
+Healthcare asset mandate.
 ```
 
-### Usage in Downstream Projects
+`tmp-kb/definitions/actions.json`:
 
-**Minimal usage (catalogs only):**
+```json
+{
+  "$schema_version": "2026.04.15",
+  "action_types": {
+    "EnrichCompany": {
+      "action_id": "EnrichCompany",
+      "parameters": ["entity_id"]
+    }
+  }
+}
+```
+
+`tmp-kb/definitions/functions.json`:
+
+```json
+{
+  "$schema_version": "2026.04.15",
+  "functions": {
+    "score_company": {
+      "function_id": "score_company",
+      "inputs": ["entity_id"]
+    }
+  }
+}
+```
+
+### 2) Run the builder
+
+```python
+from pathlib import Path
+
+from ontology.build import BuilderConfig, OntologyReleaseBuilder, write_release_bundle
+
+config = BuilderConfig(
+    kb_root=Path("tmp-kb"),
+    ontology_id="demo_ontology",
+    source_commit="local-dev",
+)
+
+builder = OntologyReleaseBuilder(config)
+bundle = builder.build_release(definitions_dir=Path("tmp-kb/definitions"))
+release_path = write_release_bundle(bundle, Path("releases"))
+print(f"Release written to: {release_path}")
+```
+
+### 3) Verify artifacts
+
+```text
+releases/demo_ontology/<YYYY.MM.DD>/
+  ontology.json
+  objects.json
+  links.json
+  manifest.json
+```
+
+---
+
+## Existing Usage
+
+### Catalog API
 
 ```python
 from ontology.registry import get_catalog, list_catalogs
 
-# No knowledge base required — standalone catalog access
+print(list_catalogs())
 attributes = get_catalog("attributes")
-firm_types = {entry["value"]: entry["description"] 
-              for entry in attributes["firm_type"]}
 ```
 
-**With entity parsing (requires knowledge base):**
+### Entity Parsing
 
 ```python
 from ontology.entities.company import Company
-from ontology.registry import get_catalog
 
-# Load catalogs
-attributes = get_catalog("attributes")
-
-# Load entities from knowledge base
 companies = Company.iter_directory("/path/to/kb/companies")
 for company in companies:
-    # Entity properties are validated against catalogs in Phase 2+
     print(company.name, company.firm_type, company.focus)
 ```
 
-### Runtime Dependencies
+---
 
-Core library:
+## New Usage: Build a Versioned Ontology Release Bundle
 
-| Package | Purpose | When needed |
-|---------|---------|-------------|
-| (none) | Catalog access is pure Python | Always |
-| `python-frontmatter>=1.1.0` | Parse Markdown entity files | Only if using entity classes |
+The builder API is exposed from `ontology.build`.
 
-Python **3.10 or newer** is required.
+### 1) Prepare your knowledge base layout
 
-### Optional: Non-Python Consumers
+The root knowledge-base directory should include:
 
-For non-Python services, download catalogs from GitHub Releases as `ontology-artifacts-1.0.0.zip` (available starting in Phase 3)
-### Runtime dependencies
+```text
+/path/to/kb/
+  companies/*.md
+  people/*.md
+  properties/*.md
+```
 
-When installed as a library the following packages are required (declared in `pyproject.toml` and installed automatically):
+### 2) Optional user definition registries
 
-| Package | Purpose |
-|---------|---------|
-| `python-frontmatter>=1.1.0` | Parse YAML front matter from Markdown files |
-| `pydantic>=2.0` | Data validation and JSON serialisation for `PropertyCatalog` |
-| `pyyaml>=6.0` | YAML config file parsing |
+Create a directory containing:
 
-Python **3.10 or newer** is required.
+- `actions.json`
+- `functions.json`
 
+Each file must include `$schema_version`.
+
+Example `actions.json`:
+
+```json
+{
+  "$schema_version": "2026.04.15",
+  "action_types": {
+    "EnrichCompany": {
+      "action_id": "EnrichCompany",
+      "parameters": ["entity_id"]
+    }
+  }
+}
+```
+
+Example `functions.json`:
+
+```json
+{
+  "$schema_version": "2026.04.15",
+  "functions": {
+    "score_company": {
+      "function_id": "score_company",
+      "inputs": ["entity_id"]
+    }
+  }
+}
+```
+
+### 3) Build and write a release
+
+```python
+from pathlib import Path
+
+from ontology.build import BuilderConfig, OntologyReleaseBuilder, write_release_bundle
+
+config = BuilderConfig(
+    kb_root=Path("/path/to/kb"),
+    ontology_id="chg_ontology",
+    source_commit="abc123",      # git SHA or release reference
+    version="2026.04.15",        # optional; defaults to YYYY.MM.DD in UTC
+)
+
+builder = OntologyReleaseBuilder(config)
+bundle = builder.build_release(definitions_dir=Path("/path/to/definitions"))
+
+release_path = write_release_bundle(bundle, Path("./releases"))
+print(release_path)
+```
+
+If `version` is omitted, the builder uses date-based versioning in `YYYY.MM.DD` format.
+
+### 4) Output artifact layout
+
+The writer creates:
+
+```text
+<output_dir>/<ontology_id>/<version>/
+  ontology.json
+  objects.json
+  links.json
+  manifest.json
+```
+
+### 5) What each artifact contains
+
+- `ontology.json`: synthesized object types, default link types, and optional actions/functions.
+- `objects.json`: normalized object snapshot derived from markdown entities.
+- `links.json`: extracted markdown/body and metadata links.
+- `manifest.json`: immutable release metadata including checksums, schema hash, catalog versions, and registry versions.
+
+---
+
+## Current Scope and Next Steps
+
+Implemented now:
+
+1. Deterministic bundle generation and local artifact writing.
+2. Date-versioned releases and content checksums.
+3. User-defined action/function registry loading.
+
+Planned next:
+
+1. GCS publishing flow (staging + checksum verification + latest pointer).
+2. Node.js graph loader for Neo4j.
+3. Release CLI/workflow wiring.
+
+---
+
+## Testing
+
+```bash
+pytest -q
+```
+
+`tests/test_build.py` covers the new release-builder behavior.
+
+
+---

@@ -42,6 +42,7 @@ class Company(OntologyEntity):
 
     @property
     def website(self) -> str | None:
+        """The company's website URL, if available."""
         return self.get("website")
 
     # ------------------------------------------------------------------
