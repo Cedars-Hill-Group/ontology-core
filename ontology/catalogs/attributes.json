@@ -191,6 +191,10 @@
       "description": "An independent film or media production company."
     },
     {
+      "value": "independent_sponsor",
+      "description": "a company that is an independent sponsor, which is an individual or firm that seeks to acquire a business without having secured financing or a specific target in advance. Independent sponsors differ from private equity firms in that they do not have committed capital and typically raise funds on a deal-by-deal basis."
+    },
+    {
       "value": "insurance",
       "description": "A company that insures risks for its clients and charges premiums in return."
     },
@@ -547,6 +551,10 @@
     {
       "value": "cfo",
       "description": "Chief Financial Officer (CFO) is a senior executive responsible for managing the financial actions of a company."
+    },
+    {     
+      "value": "chemicals",
+      "description": "A company that produces or manufactures chemicals."
     },
     {
       "value": "chp",
@@ -1095,6 +1103,10 @@
     {
       "value": "portfolio_management",
       "description": "Portfolio Management involves the selection, prioritization, and oversight of a collection of investments to achieve specific financial goals."
+    },
+    {
+      "value": "power_generation",
+      "description": "Power generation involves the production of electricity from various energy sources, including fossil fuels, nuclear, and renewable sources."
     },
     {
       "value": "ppli",
