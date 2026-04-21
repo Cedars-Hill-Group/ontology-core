@@ -1365,8 +1365,145 @@
       "description": "Workflows involve the sequence of processes through which a piece of work passes from initiation to completion."
     }
   ],
+  "prop_type": [
+    {
+      "value":"active_adult",
+      "description":"Active adult communities are residential developments designed for individuals aged 55 and older who are looking for a lifestyle that includes social activities, amenities, and maintenance-free living."
+    },
+    {
+      "value":"btr",
+      "description":"Build-to-rent (BTR) communities are residential developments designed for individuals and families who prefer renting homes rather than owning, typically offering amenities, professional management, and a sense of community."
+    },
+    {
+      "value":"cooperative",
+      "description":"Cooperative communities are residential developments where residents collectively own and manage the property, typically through a cooperative corporation, providing a sense of community and shared responsibility."
+    },
+    {
+      "value":"condominiums",
+      "description":"Condominiums are residential developments where individuals own their units while sharing ownership and responsibility for common areas and amenities with other residents."
+    },
+    {
+      "value":"data_centers",
+      "description":"Data centers are facilities used to house computer systems and associated components, such as telecommunications and storage systems, providing reliable and secure infrastructure for IT operations."
+    },
+    {
+      "value":"education",
+      "description":"Education facilities include schools, universities, and other institutions that provide educational services and support learning and development."
+    },
+    {
+      "value":"healthcare",
+      "description":"Healthcare facilities include hospitals, clinics, and other institutions that provide medical services and support health and well-being."
+    },
+    {
+      "value":"industrial",
+      "description":"Industrial facilities include warehouses, manufacturing plants, and other buildings used for industrial purposes, supporting production, storage, and distribution activities."
+    },
+    {
+      "value":"land",
+      "description":"Land includes undeveloped or vacant parcels of real estate that can be used for various purposes, such as agriculture, development, or conservation."
+    },
+    {
+      "value":"marina",
+      "description":"Marinas are facilities that provide docking, storage, and other services for boats and yachts, supporting recreational boating and marine activities."
+    },
+    {
+      "value":"manufactured_housing",
+      "description":"Manufactured housing communities (MHCs) are residential developments that feature prefabricated homes, offering an affordable and flexible housing option with various amenities and community features."
+    },
+    {
+      "value":"mixed_use",
+      "description":"Mixed-use developments are properties that combine residential, commercial, and sometimes industrial spaces within a single development, promoting a live-work-play environment."
+    },
+    {
+      "value":"municipal",
+      "description":"Municipal facilities include government buildings, public infrastructure, and other properties owned and operated by local, state, or federal governments to provide public services and support community needs."
+    },
+    {
+      "value":"recreational",
+      "description":"Recreational facilities include parks, sports complexes, and other properties designed for leisure, entertainment, and physical activities."
+    },
+    {
+      "value":"residential",
+      "description":"Residential developments are properties designed for individuals and families to live in, including single-family homes, apartments, and townhouses, providing a safe and comfortable living environment."
+    },
+    {
+      "value":"self_storage",
+      "description":"Self-storage facilities are properties that provide secure, rentable storage units for individuals and businesses to store their belongings, offering convenience and flexibility."
+    },
+    {
+      "value":"senior_living",
+      "description":"Senior living communities are residential developments designed for individuals aged 55 and older who are looking for healthcare, social activities, and support services in a community setting, including independent living, assisted living, and memory care options."
+    },
+    {
+      "value":"sfr",
+      "description":"Single-family rental (SFR) communities are residential developments designed for individuals and families who are looking for rental housing options that include single-family homes, offering a sense of community and maintenance-free living."
+    },
+    {
+      "value":"student_housing",
+      "description":"Student housing communities are residential developments designed for students who are looking for rental housing options that include shared or individual living spaces, offering a sense of community and proximity to educational institutions."
+    },
+    {
+      "value":"townhomes",
+      "description":"Townhome communities are residential developments designed for individuals and families who are looking for rental or ownership housing options that include townhouses, offering a sense of community and maintenance-free living."
+    },
+    {
+      "value":"entertainment",
+      "description":"Entertainment venues are properties designed for leisure, amusement, and cultural activities, including theaters, concert venues, and other attractions that provide recreational and social experiences."
+    }
+  ],
+  "project_type": [
+    {
+      "value": "acquisition",
+      "description": "Acquisition projects involve the purchase of existing assets or companies to expand operations, enter new markets, or achieve strategic objectives."
+    },
+    {
+      "value": "development",
+      "description": "Development projects involve the construction of new assets or the significant renovation of existing ones to create value and meet market demand."
+    },
+    {
+      "value": "distressed",
+      "description": "Distressed projects involve the management and resolution of assets or companies that are underperforming, facing financial difficulties, or experiencing operational challenges."
+    },
+    {
+      "value": "stabilized",
+      "description": "Stabilized projects are those that have reached a level of operational and financial stability, often after a period of development or turnaround, and are generating consistent cash flow and returns."
+    },
+    {      
+      "value": "value_add",
+      "description": "Value-add projects involve the ongoing management and optimization of assets or companies to improve performance, efficiency, and profitability."
+    },
+    {
+      "value": "other",
+      "description": "Other projects include any initiatives that do not fall into the categories of acquisition, development, distressed, stabilized, or value-add but are still relevant to the business or industry."
+    }
+  ],
+  "loan_structure": [
+    {
+      "value": "senior",
+      "description": "Senior loans are typically the highest-ranking debt in a company's capital structure, meaning they have priority over other types of debt in terms of repayment and collateral claims in the event of default."
+    },
+    {
+      "value": "second",
+      "description": "Second loans are typically subordinate to senior loans in a company's capital structure, meaning they have a lower priority in terms of repayment and collateral claims in the event of default."
+    },
+    {
+      "value": "pace",
+      "description": "PACE (Property Assessed Clean Energy) loans are a type of financing that allows property owners to fund energy efficiency, renewable energy, and water conservation improvements through a special assessment on their property tax bill."
+    },
+    {
+      "value": "mezz",
+      "description": "Mezzanine loans are a hybrid of debt and equity financing that typically provide lenders with the right to convert to an equity interest in the company in case of default, and they are subordinate to senior and second loans in the capital structure."
+    },
+    {
+      "value": "pref",
+      "description": "Preferred loans are a type of financing that provides lenders with a higher claim on assets and earnings than common equity, but subordinate to senior and mezzanine debt in the capital structure."
+    }
+  ],
   "accept_multiple_values": {
     "firm_type": true,
-    "focus": true
+    "focus": true,
+    "prop_type": true,
+    "project_type": true,
+    "loan_structure": true
   }
 }
