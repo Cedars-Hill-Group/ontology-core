@@ -1499,11 +1499,83 @@
       "description": "Preferred loans are a type of financing that provides lenders with a higher claim on assets and earnings than common equity, but subordinate to senior and mezzanine debt in the capital structure."
     }
   ],
+  "loan_type": [
+    {
+      "value": "bridge",
+      "description": "Bridge loans are short-term financing options that provide temporary funding to cover immediate cash flow needs or to bridge the gap between the purchase of a new asset and the sale of an existing one."
+    },
+    {
+      "value": "construction",
+      "description": "Construction loans are short-term financing options that provide funding for the construction of new assets or the renovation of existing ones, typically with interest-only payments during the construction period."
+    },
+    {
+      "value": "permanent",
+      "description": "Permanent loans are long-term financing options that provide funding for stabilized assets or companies, typically with regular principal and interest payments over a fixed term."
+    },
+    {
+      "value": "refinance",
+      "description": "Refinance loans involve replacing an existing loan with a new one, often with different terms, to take advantage of lower interest rates, extend the loan term, or access additional capital."
+    },
+    {
+      "value": "agency",
+      "description": "Agency loans are a type of financing provided by government-sponsored enterprises (GSEs) or other government agencies, typically with favorable terms and conditions compared to conventional loans."
+    },
+    {
+      "value": "c&i",
+      "description": "Commercial and Industrial (C&I) loans are a type of financing provided to businesses for various purposes, including working capital, equipment purchases, and expansion projects."
+    },
+    {
+      "value": "cmbs",
+      "description": "Commercial Mortgage-Backed Securities (CMBS) loans are a type of financing secured by commercial real estate properties and are typically pooled together and sold as securities to investors."
+    },
+    {
+      "value": "construction_to_permanent",
+      "description": "Construction-to-Permanent loans are a type of financing that initially provides funds for the construction of a new asset and then converts to a permanent loan once the construction is complete, typically with regular principal and interest payments over a fixed term."
+    },
+    {
+      "value": "dpo",
+      "description": "Discounted payoff (DPO) loans are a type of financing provided to refinance existing debt at a discounted payoff amount, often used in distressed situations to reduce the overall debt burden and improve cash flow."
+    },
+    {
+      "value": "fha",
+      "description": "Federal Housing Administration (FHA) loans are a type of financing insured by the FHA, designed to help lower-income and first-time homebuyers obtain mortgage financing with more flexible credit requirements and lower down payment options."
+    },
+    {
+      "value": "hud",
+      "description": "Department of Housing and Urban Development (HUD) loans are a type of financing provided or insured by HUD, designed to support affordable housing and community development projects."
+    },
+    {
+      "value": "insurance",
+      "description": "Insurance loans are a type of secured financing provided to businesses or individuals to cover various insurance-related expenses, including premiums, claims, and risk management costs."
+    },
+    {
+      "value": "lender_finance",
+      "description": "Lender finance loans are a type of secured financing provided to lenders to support their lending activities, often used to provide liquidity and capital for loan origination and portfolio management."
+    },
+    {
+      "value": "sba",
+      "description": "Small Business Administration (SBA) loans are a type of financing provided to small businesses with the support of the SBA, often featuring favorable terms, lower down payments, and reduced risk for lenders."
+    }
+  ],
   "accept_multiple_values": {
     "firm_type": true,
     "focus": true,
     "prop_type": true,
     "project_type": true,
     "loan_structure": true
+  },
+  "applies_when": {
+    "loan_structure": {
+      "firm_type": { "contains_any": ["lender"] }
+    },
+    "prop_type": {
+      "focus": { "contains_any": ["commercial_real_estate"] }  
+    },
+    "loan_structure": {
+    "firm_type": { "contains_any": ["lender"] }
+    },
+    "loan_type": {
+    "firm_type": { "contains_any": ["lender"] }
+    }
   }
 }
