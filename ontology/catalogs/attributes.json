@@ -649,6 +649,10 @@
       "description": "Corporate bonds are debt securities issued by corporations to raise capital for various purposes."
     },
     {
+      "value": "computer_science",
+      "description": "Computer science is the study of computers and computational systems, including their theory, design, development, and application."
+    },
+    {
       "value": "cpa",
       "description": "A Certified Public Accountant (CPA) is a professional designation given to accountants who have passed the Uniform CPA Examination and met additional state certification and experience requirements."
     },
@@ -713,6 +717,10 @@
       "description": "Digital infrastructure refers to the foundational services and facilities that support digital operations, including data centers, networks, and cloud services."
     },
     {
+      "value": "direct_investments",
+      "description": "Direct investments involve investing directly in a company or asset, rather than through a fund or intermediary."
+    },
+    {
       "value": "distressed",
       "description": "Distressed investing involves purchasing securities or assets that are in financial distress or facing bankruptcy, often at a significant discount."
     },
@@ -735,6 +743,10 @@
     {
       "value": "emerging_markets",
       "description": "Emerging markets are nations with social or business activities in the process of rapid growth and industrialization."
+    },
+    {
+      "value": "emerging_managers",
+      "description": "Emerging managers are investment managers who are in the early stages of their career or firm development, often managing smaller funds or new investment strategies."
     },
     {
       "value": "energy",
