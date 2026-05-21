@@ -1205,6 +1205,10 @@
       "description": "Retail involves the sale of goods and services from businesses to consumers, including brick-and-mortar stores and e-commerce platforms."
     },
     {
+      "value": "ric",
+      "description": "Regulated Investment Company (RIC) is a type of investment fund that meets specific requirements under the Internal Revenue Code, allowing it to pass through income and capital gains to shareholders without being taxed at the corporate level."
+    },
+    {
       "value": "risk",
       "description": "Risk involves the identification, assessment, and prioritization of potential events or uncertainties that could impact an organization's objectives."
     },
