@@ -1431,8 +1431,16 @@
       "description":"Mixed-use developments are properties that combine residential, commercial, and sometimes industrial spaces within a single development, promoting a live-work-play environment."
     },
     {
+      "value":"multifamily",
+      "description":"Multifamily residential properties including apartment complexes, apartment buildings, and multifamily communities designed for multiple households."
+    },
+    {
       "value":"municipal",
       "description":"Municipal facilities include government buildings, public infrastructure, and other properties owned and operated by local, state, or federal governments to provide public services and support community needs."
+    },
+    {
+      "value":"office",
+      "description":"Office buildings and office parks designed for commercial business operations, including corporate headquarters and professional service facilities."
     },
     {
       "value":"recreational",
@@ -1441,6 +1449,10 @@
     {
       "value":"residential",
       "description":"Residential developments are properties designed for individuals and families to live in, including single-family homes, apartments, and townhouses, providing a safe and comfortable living environment."
+    },
+    {
+      "value":"retail",
+      "description":"Retail properties including shopping centers, malls, and standalone retail establishments designed for commercial retail business operations."
     },
     {
       "value":"self_storage",
